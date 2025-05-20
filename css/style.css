@@ -1,0 +1,96 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Fuente general */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f9f6; /* verde pastel muy claro */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  /* ENCABEZADO */
+  .header {
+    background-color: #5b9aa0; /* verde azulado suave */
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .nav ul {
+    list-style: none;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #7fb8a5;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav a:hover {
+    background-color: #61988e;
+  }
+  
+  /* GRID GENERAL */
+  .grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  /* Secciones del contenido */
+  section {
+    background-color: #e0f2e9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Títulos */
+  section h2 {
+    margin-bottom: 10px;
+    color: #2d5f5d;
+  }
+  
+  /* Panel especial */
+  .panel a {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #7fb8a5;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+  }
+  
+  .panel a:hover {
+    background-color: #61988e;
+  }
+  
+  /* PIE DE PÁGINA */
+  .footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 15px;
+    background-color: #5b9aa0;
+    color: white;
+    border-radius: 12px;
+  }
+  
