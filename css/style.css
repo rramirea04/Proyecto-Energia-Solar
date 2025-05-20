@@ -94,8 +94,12 @@
     border-radius: 12px;
   }
 
+
 /*para guardar de local a nuve: 
-git add . (o los archivos específicos)
-git commit -m "Tu mensaje"
-git push 
-*/
+git add . (o los archivos específicos) 
+git commit -m "Tu mensaje" 
+git push */ 
+/* para traer la copia de la nuve a visual estudio: 
+git branch 
+git checkout main 
+git pull origin main */
