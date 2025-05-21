@@ -1,107 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inicio - Energías Renovables</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <header class="header">
     <h1>Energías Sostenibles y Renovables</h1>
-    <nav class="nav">
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="tipos.html">Tipos de Energía</a></li>
-        <li><a href="calculadora.html">Calculadora Energética</a></li>
-        <li><a href="noticias.html">Noticias</a></li>
-        <li><a href="panel.html">Mi Panel</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <main class="grid-layout">
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="tipos.html">Tipos de Energía</a></li>
+      <li><a href="calculadora.html">Calculadora Energética</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <li><a href="panel.html">Mi Panel</a></li>
+    </ul>
+  </nav>
 
-    <section class="inicio fade-in-up">
-      <h2>Bienvenido al Portal de Energías Renovables</h2>
-      <p>Descubre cómo las energías limpias pueden transformar tu vida y el planeta.</p>
-    </section>
-  
-    <section id="objetivos" class="objetivos fade-in-up">
-      <h2>Objetivos del Portal</h2>
-      <ul>
-        <li>Concienciar sobre el uso responsable de la energía.</li>
-        <li>Informar sobre tecnologías limpias disponibles.</li>
-        <li>Facilitar herramientas para medir el ahorro energético.</li>
-      </ul>
-    </section>
-  
-    <section id="testimonios" class="testimonios fade-in-up">
-      <h2>Testimonios</h2>
-      <blockquote>
-        “Desde que instalamos paneles solares, nuestra factura eléctrica se redujo un 60%.” – Usuario Juan G.
-      </blockquote>
-    </section>
-  
-    <section id="video" class="video fade-in-up">
-      <h2>¿Qué son las energías renovables?</h2>
-      <iframe width="100%" height="200" src="https://www.youtube.com/embed/4uG1NMKNWCU" 
-        title="YouTube video" frameborder="0" allowfullscreen></iframe>
-    </section>
-  
-    <section class="indicadores fade-in-up">
-      <h2>Impacto Global</h2>
-      <ul>
-        <li>+1200 usuarios registrados</li>
-        <li>+500 calculadoras de ahorro realizadas</li>
-        <li>+30 toneladas de CO2 evitadas</li>
-      </ul>
-    </section>
-  
-    <section class="chatbot fade-in-up">
-      <h2>¿Necesitas ayuda?</h2>
-      <p><strong>Chatbot:</strong> Estoy aquí para ayudarte</p>
-      <input type="text" id="userInput" placeholder="Escribe tu pregunta">
+  <div class="layout-grid">
+    <main class="main-content">
+      <section class="energia fade-in-up">
+        <h2>Bienvenido</h2>
+        <p>Explora el mundo de las energías sostenibles, aprende sobre sus tipos, beneficios y cómo usarlas en tu vida diaria.</p>
+      </section>
+
+      <section class="energia fade-in-up" id="video">
+        <h2>¿Qué son las energías renovables?</h2>
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/4uG1NMKNWCU" 
+          title="Video sobre Energías Renovables" frameborder="0" allowfullscreen></iframe>
+      </section>
+
+      <section class="energia fade-in-up extra">
+        <h2>Explora más</h2>
+        <p>Visita nuestra sección de noticias y novedades sobre energía sostenible.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Botón flotante del chatbot -->
+  <div id="chatbot-button" onclick="toggleChatbot()">💬</div>
+
+  <!-- Contenedor flotante del chatbot -->
+  <div id="chatbot-box">
+    <div class="chatbot-header">
+      <span>Chatbot Energía</span>
+      <span class="close-chatbot" onclick="toggleChatbot()">&times;</span>
+    </div>
+    <div class="chatbot-body">
+      <p><strong>Chatbot:</strong> ¡Hola! ¿En qué puedo ayudarte?</p>
+      <input type="text" id="userInput" placeholder="Escribe tu pregunta" />
       <button onclick="responder()">Enviar</button>
       <div id="respuestaBot"></div>
-    </section>
-  
-    <!-- Celda vacía para completar la grilla -->
-    <section class="extra fade-in-up">
-      <h2>Explora más</h2>
-      <p>Visita nuestra sección de noticias y novedades sobre energía sostenible.</p>
-    </section>
-  
-    <section class="extra2 fade-in-up">
-      <h2>Datos curiosos</h2>
-      <p>¿Sabías que la energía solar en 1 hora podría cubrir todo el consumo del mundo en 1 año?</p>
-    </section>
-  
-    <section class="extra3 fade-in-up">
-      <h2>Contáctanos</h2>
-      <p>¿Tienes dudas? Escríbenos a energia@renovable.com</p>
-    </section>
-  
-  </main>
+    </div>
+  </div>
+
+   <!-- SECCIÓN "Contáctanos" justo antes del footer -->
+   <section class="energia fade-in-up contacto">
+    <h2>Contáctanos</h2>
+    <p>¿Tienes dudas? Escríbenos a <a href="mailto:energia@renovable.com">energia@renovable.com</a></p>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 Energías Renovables. Proyecto educativo colaborativo.</p>
   </footer>
 
-  <script>
-    function responder() {
-      const input = document.getElementById('userInput').value.toLowerCase();
-      let respuesta = "Lo siento, no entendí tu pregunta.";
-    
-      if (input.includes("solar")) respuesta = "La energía solar utiliza la luz del sol para generar electricidad.";
-      else if (input.includes("eólica")) respuesta = "La energía eólica se genera con el movimiento del viento.";
-      else if (input.includes("huella")) respuesta = "Reducir tu huella de carbono ayuda al planeta. ¿Quieres ver el video?";
-      else if (input.includes("panel")) respuesta = "En tu panel puedes ver tus estadísticas personalizadas.";
-      else if (input.includes("calculadora")) respuesta = "Ve a la sección 'Calculadora Energética' para estimar tu consumo.";
-    
-      document.getElementById('respuestaBot').innerText = respuesta;
-    }
-  </script>
-
+  <script src="js/script.js"></script>
 </body>
 </html>
