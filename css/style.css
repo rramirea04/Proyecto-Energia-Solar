@@ -18,7 +18,7 @@ a {
 }
 
 a:hover {
-  color: #1e3d2f;
+  color: white;
 }
 
 /* Header y navegación */
@@ -32,6 +32,16 @@ a:hover {
 .header h1 {
   font-size: 2em;
   margin-bottom: 10px;
+}
+
+main.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  grid-template-rows: repeat(3, auto);   /* 3 filas */
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .nav ul {
@@ -74,6 +84,20 @@ section {
 section h2 {
   color: #2c6e49;
   margin-bottom: 10px;
+}
+
+/* Animaciones */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Botones */
