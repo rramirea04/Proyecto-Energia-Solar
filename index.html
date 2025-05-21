@@ -26,8 +26,59 @@
           <h2>Bienvenido al Portal de Energías Renovables</h2>
           <p>Descubre cómo las energías limpias pueden transformar tu vida y el planeta.</p>
         </section>
+
+        <section id="objetivos" class="objetivos">
+          <h2>Objetivos del Portal</h2>
+          <ul>
+            <li>Concienciar sobre el uso responsable de la energía.</li>
+            <li>Informar sobre tecnologías limpias disponibles.</li>
+            <li>Facilitar herramientas para medir el ahorro energético.</li>
+          </ul>
+        </section>
+        <section id="testimonios" class="testimonios">
+          <h2>Testimonios</h2>
+          <blockquote>
+            “Desde que instalamos paneles solares, nuestra factura eléctrica se redujo un 60%.” – Usuario Juan G.
+          </blockquote>
+        </section>
+        <section id="video" class="video">
+          <h2>¿Qué son las energías renovables?</h2>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/4uG1NMKNWCU" 
+            title="YouTube video" frameborder="0" allowfullscreen></iframe>
+        </section>
+
+        <section class="indicadores">
+          <h2>Impacto Global</h2>
+          <ul>
+            <li>+1200 usuarios registrados</li>
+            <li>+500 calculadoras de ahorro realizadas</li>
+            <li>+30 toneladas de CO2 evitadas</li>
+          </ul>
+        </section>
+
+        <section class="chatbot">
+          <h2>¿Necesitas ayuda?</h2>
+          <p><strong>Chatbot:</strong> Estoy aquí para ayudarte</p>
+          <input type="text" id="userInput" placeholder="Escribe tu pregunta">
+          <button onclick="responder()">Enviar</button>
+          <div id="respuestaBot"></div>
+        </section>
         
   </main>
+  <script>
+    function responder() {
+      const input = document.getElementById('userInput').value.toLowerCase();
+      let respuesta = "Lo siento, no entendí tu pregunta.";
+    
+      if (input.includes("solar")) respuesta = "La energía solar utiliza la luz del sol para generar electricidad.";
+      else if (input.includes("eólica")) respuesta = "La energía eólica se genera con el movimiento del viento.";
+      else if (input.includes("huella")) respuesta = "Reducir tu huella de carbono ayuda al planeta. ¿Quieres ver el video?";
+      else if (input.includes("panel")) respuesta = "En tu panel puedes ver tus estadísticas personalizadas.";
+      else if (input.includes("calculadora")) respuesta = "Ve a la sección 'Calculadora Energética' para estimar tu consumo.";
+    
+      document.getElementById('respuestaBot').innerText = respuesta;
+    }
+    </script>
   <footer class="footer">
     <p>&copy; 2025 Energías Renovables. Proyecto educativo colaborativo.</p>
   </footer>
