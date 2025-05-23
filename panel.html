@@ -1,39 +1,73 @@
 <!DOCTYPE html>
+<!-- Declaración del tipo de documento HTML5. Indica al navegador que el contenido es una página web moderna -->
+
 <html lang="es">
+<!-- Inicio del documento HTML, especificando que el idioma principal es español -->
+
 <head>
   <meta charset="UTF-8">
+  <!-- Configuración de la codificación de caracteres. UTF-8 permite usar tildes, eñes y símbolos especiales -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Hace que el diseño sea responsivo, adaptándose al ancho de pantalla del dispositivo (ideal para móviles y tabletas) -->
+
   <title>Mi Panel Personal</title>
+  <!-- Título que se muestra en la pestaña del navegador -->
+
   <link rel="stylesheet" href="css/style.css">
+  <!-- Vincula la hoja de estilos externa que define la apariencia de la página -->
+
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Importa la fuente futurista "Orbitron" desde Google Fonts. Apoya la estética moderna del proyecto -->
 </head>
+
 <body>
+<!-- Comienza el cuerpo del documento, que contiene todo lo que se ve en la pantalla -->
+
   <header class="header">
+    <!-- Cabecera de la página. Suele incluir el título o logotipo del sitio -->
     <h1>Mi Panel Personal</h1>
+    <!-- Título principal visible para el usuario. Da contexto sobre el propósito de esta página -->
   </header>
 
   <nav class="navbar">
+    <!-- Menú de navegación para moverse entre secciones del sitio -->
     <ul>
       <li><a href="index.html">Inicio</a></li>
+      <!-- Enlace a la página de inicio -->
       <li><a href="tipos.html">Tipos de Energía</a></li>
+      <!-- Enlace a la sección educativa sobre tipos de energía -->
       <li><a href="calculadora.html">Calculadora Energética</a></li>
+      <!-- Enlace a la herramienta de simulación de consumo energético -->
       <li><a href="noticias.html">Noticias</a></li>
+      <!-- Enlace a la página informativa de actualidad -->
       <li><a href="panel.html">Mi Panel</a></li>
+      <!-- Enlace al panel personalizado del usuario. Página actual -->
     </ul>
   </nav>
 
   <div class="layout-grid">
+    <!-- Contenedor principal con disposición en rejilla. Permite organizar secciones de forma ordenada -->
+
     <main class="main-content">
+      <!-- Sección principal del contenido visible y central -->
+
       <section class="energia">
+        <!-- Sección específica con clase para aplicar estilos relacionados con la temática energética -->
+
         <h2>Tu espacio personalizado</h2>
+        <!-- Subtítulo que da la bienvenida al usuario a su panel personalizado -->
+
         <p>Aquí podrás guardar tus resultados, preferencias y recursos educativos sobre energías renovables.</p>
       </section>
-      <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
     </main>
   </div>
 
   <footer class="footer">
+    <!-- Pie de página común para todo el sitio. Refuerza la idea de colaboración y propósito educativo -->
     <p>&copy; 2025 Energías Renovables. Proyecto educativo colaborativo.</p>
   </footer>
 </body>
 </html>
+

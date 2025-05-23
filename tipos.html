@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"> <!-- Define que el documento es HTML5 y el idioma es español -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tipos de Energía</title>
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño adaptable a móviles -->
+    <title>Tipos de Energía</title> <!-- Título que aparece en la pestaña del navegador -->
+    
+    <!-- Vincula una hoja de estilos CSS local -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fuente personalizada desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Encabezado principal del sitio -->
     <header class="header">
         <h1>Tipos de Energía Renovable</h1>
     </header>
 
+    <!-- Menú de navegación principal del sitio -->
     <nav class="navbar">
         <ul>
             <li><a href="index.html">Inicio</a></li>
@@ -22,32 +29,40 @@
         </ul>
     </nav>
 
+    <!-- Contenedor principal con diseño tipo grid -->
     <div class="layout-grid">
         <main class="main-content">
+            <!-- Cada sección representa un tipo de energía con imagen, título y descripción -->
+
+            <!-- Sección Solar -->
             <section class="energia" onclick="openModal('modal-solar')">
                 <h2>Solar</h2>
                 <img src="img/solar_urbano1.png" alt="Energía Solar">
                 <p>La energía solar aprovecha la radiación del sol para generar electricidad o calor.</p>
             </section>
 
+            <!-- Sección Eólica -->
             <section class="energia" onclick="openModal('modal-eolica')">
                 <h2>Eólica</h2>
                 <img src="img/parque_eolico.png" alt="Energía Eólica">
                 <p>La energía eólica utiliza la fuerza del viento para producir electricidad mediante aerogeneradores.</p>
             </section>
 
+            <!-- Sección Hidráulica -->
             <section class="energia" onclick="openModal('modal-hidraulica')">
                 <h2>Hidráulica</h2>
                 <img src="img/solar_urbano2.png" alt="Energía Hidráulica">
                 <p>Se genera a partir del movimiento del agua, como ríos o presas, para accionar turbinas eléctricas.</p>
             </section>
 
+            <!-- Sección Biomasa -->
             <section class="energia" onclick="openModal('modal-biomasa')">
                 <h2>Biomasa</h2>
                 <img src="img/solar_urbano1.png" alt="Energía de Biomasa">
                 <p>Proviene de materia orgánica como madera, residuos agrícolas o desechos animales.</p>
             </section>
 
+            <!-- Sección Geotérmica -->
             <section class="energia" onclick="openModal('modal-geotermica')">
                 <h2>Geotérmica</h2>
                 <img src="img/geotermia.png" alt="Energía Geotérmica">
@@ -56,7 +71,8 @@
         </main>
     </div>
 
-    <!-- Modales flotantes -->
+    <!-- Modales: ventanas emergentes que muestran más información -->
+    <!-- Modal para energía solar -->
     <div id="modal-solar" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-solar')">&times;</span>
@@ -65,6 +81,7 @@
         </div>
     </div>
 
+    <!-- Modal para energía eólica -->
     <div id="modal-eolica" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-eolica')">&times;</span>
@@ -73,6 +90,7 @@
         </div>
     </div>
 
+    <!-- Modal para energía hidráulica -->
     <div id="modal-hidraulica" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-hidraulica')">&times;</span>
@@ -81,6 +99,7 @@
         </div>
     </div>
 
+    <!-- Modal para biomasa -->
     <div id="modal-biomasa" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-biomasa')">&times;</span>
@@ -89,6 +108,7 @@
         </div>
     </div>
 
+    <!-- Modal para geotérmica -->
     <div id="modal-geotermica" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-geotermica')">&times;</span>
@@ -97,10 +117,12 @@
         </div>
     </div>
 
+    <!-- Pie de página del sitio -->
     <footer class="footer">
         <p>Creado En: Bootcamp | Proyecto Educativo - 2025</p>
     </footer>
 
+    <!-- Script para mostrar y ocultar los modales -->
     <script>
         function openModal(modalId) {
             document.getElementById(modalId).style.display = 'flex';

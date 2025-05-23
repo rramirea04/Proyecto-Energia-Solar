@@ -1,43 +1,87 @@
 <!DOCTYPE html>
+<!-- Define que este archivo es un documento HTML5 -->
+
 <html lang="es">
+<!-- Indica que el idioma del contenido es español -->
+
 <head>
   <meta charset="UTF-8" />
+  <!-- Especifica la codificación de caracteres como UTF-8, compatible con acentos y símbolos -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Hace que la página sea responsive, adaptándose al tamaño de la pantalla del dispositivo -->
+
   <title>Inicio - Energías Renovables</title>
+  <!-- Título que aparece en la pestaña del navegador -->
+
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Enlace al archivo CSS externo que define los estilos visuales -->
+
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Importa la fuente futurista Orbitron desde Google Fonts -->
 </head>
+
 <body>
+  <!-- Comienzo del cuerpo de la página web -->
+
   <header class="header">
+    <!-- Encabezado principal del sitio -->
     <h1>Energías Sostenibles y Renovables</h1>
+    <!-- Título principal del sitio web -->
   </header>
 
   <nav class="navbar">
+    <!-- Barra de navegación del sitio -->
     <ul>
+      <!-- Lista de enlaces de navegación -->
       <li><a href="index.html">Inicio</a></li>
+      <!-- Enlace a la página de inicio -->
       <li><a href="tipos.html">Tipos de Energía</a></li>
+      <!-- Enlace a la sección educativa sobre tipos de energía -->
       <li><a href="calculadora.html">Calculadora Energética</a></li>
+      <!-- Enlace a una herramienta interactiva de cálculo -->
       <li><a href="noticias.html">Noticias</a></li>
+      <!-- Enlace a noticias o novedades del sector energético -->
       <li><a href="panel.html">Mi Panel</a></li>
+      <!-- Enlace al área personalizada del usuario -->
     </ul>
   </nav>
 
   <div class="layout-grid">
+    <!-- Contenedor principal que usa CSS Grid para estructurar el contenido -->
+
     <main class="main-content">
+      <!-- Sección principal del contenido del sitio -->
+
       <section class="energia fade-in-up">
+        <!-- Sección con animación para dar la bienvenida -->
         <h2>Bienvenido</h2>
-        <p>Explora el mundo de las energías sostenibles, aprende sobre sus tipos, beneficios y cómo usarlas en tu vida diaria.</p>
+        <!-- Subtítulo de sección -->
+        <p>
+          Explora el mundo de las energías sostenibles, aprende sobre sus tipos, beneficios y cómo usarlas en tu vida diaria.
+        </p>
+        <!-- Párrafo introductorio motivacional y educativo -->
       </section>
 
       <section class="energia fade-in-up" id="video">
+        <!-- Sección que incluye un video educativo con animación -->
         <h2>¿Qué son las energías renovables?</h2>
-        <iframe width="100%" height="200" src="https://www.youtube.com/embed/4uG1NMKNWCU" 
-          title="Video sobre Energías Renovables" frameborder="0" allowfullscreen></iframe>
+        <!-- Pregunta guía como recurso didáctico -->
+
+        <iframe width="100%" height="200" 
+                src="https://www.youtube.com/embed/4uG1NMKNWCU" 
+                title="Video sobre Energías Renovables" 
+                frameborder="0" 
+                allowfullscreen>
+        </iframe>
+        <!-- Video embebido desde YouTube. Explicación visual para aprendizaje multimodal -->
       </section>
 
       <section class="energia fade-in-up extra">
+        <!-- Sección adicional con animación -->
         <h2>Explora más</h2>
         <p>Visita nuestra sección de noticias y novedades sobre energía sostenible.</p>
+        <!-- Invitación a continuar navegando y aprendiendo -->
       </section>
 
     </main>
@@ -45,32 +89,56 @@
 
   <!-- Botón flotante del chatbot -->
   <div id="chatbot-button" onclick="toggleChatbot()">💬</div>
+  <!-- Botón flotante que activa el chatbot educativo -->
 
   <!-- Contenedor flotante del chatbot -->
   <div id="chatbot-box">
+    <!-- Caja emergente del chatbot -->
     <div class="chatbot-header">
+      <!-- Encabezado del chatbot -->
       <span>Chatbot Energía</span>
+      <!-- Título del chatbot -->
       <span class="close-chatbot" onclick="toggleChatbot()">&times;</span>
+      <!-- Botón para cerrar el chatbot -->
     </div>
+
     <div class="chatbot-body">
+      <!-- Cuerpo del chatbot donde se muestra el diálogo -->
       <p><strong>Chatbot:</strong> ¡Hola! ¿En qué puedo ayudarte?</p>
+      <!-- Mensaje inicial del chatbot -->
+
       <input type="text" id="userInput" placeholder="Escribe tu pregunta" />
+      <!-- Campo de texto para que el usuario escriba su consulta -->
+
       <button onclick="responder()">Enviar</button>
+      <!-- Botón que envía la pregunta al chatbot -->
+
       <div id="respuestaBot"></div>
+      <!-- Contenedor donde se muestra la respuesta del chatbot -->
     </div>
   </div>
 
-   <!-- SECCIÓN "Contáctanos" justo antes del footer -->
-   <section class="energia fade-in-up contacto">
+  <!-- SECCIÓN "Contáctanos" justo antes del footer -->
+  <section class="energia fade-in-up contacto">
+    <!-- Sección para contacto con animación -->
     <h2>Contáctanos</h2>
-    <p>¿Tienes dudas? Escríbenos a <a href="mailto:energia@renovable.com">energia@renovable.com</a></p>
+    <p>
+      ¿Tienes dudas? Escríbenos a 
+      <a href="mailto:energia@renovable.com">energia@renovable.com</a>
+    </p>
+    <!-- Correo de contacto como recurso de comunicación con los desarrolladores o docentes -->
   </section>
 
   <!-- Footer -->
   <footer class="footer">
+    <!-- Pie de página del sitio -->
     <p>&copy; 2025 Energías Renovables. Proyecto educativo colaborativo.</p>
+    <!-- Aviso de derechos y autoría -->
   </footer>
 
   <script src="js/script.js"></script>
+  <!-- Enlace al archivo JavaScript que controla el comportamiento del chatbot u otras funciones dinámicas -->
+
 </body>
 </html>
+
