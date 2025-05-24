@@ -70,6 +70,7 @@
      GRID DE CONTENIDO PRINCIPAL
      ======================================= */
   .main-content {
+    
     display: grid; /* Aplica diseño en cuadrícula */
     gap: 20px; /* Separación entre tarjetas */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
@@ -86,6 +87,13 @@
     display: block; /* Elimina espacios inferiores por defecto en imágenes */
     margin: 0 auto; /* Centra la imagen horizontalmente */
     object-fit: cover; /* Cubre todo el contenedor sin deformar la imagen */
+  }
+
+  .energia{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    justify-content: space-around;
   }
   
   .energia h2 {
@@ -264,11 +272,23 @@
     .footer {
       padding: 15px; /* Ajuste para móviles pequeños */
     }
-  
-    .energia {
-      padding: 15px; /* Reduce el padding en tarjetas */
-    }
   }
+
+
+  .noticias-card{
+    background-color: #0f2027;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px;
+    text-align: center;
+  }
+  .noticias-card img{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
   
 /*haciendo todos la prueva*/
 /*para guardar de local a nuve: 
