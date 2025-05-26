@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculadora Energética</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     .hidden {
       display: none;
@@ -13,7 +13,7 @@
   </style>
 </head>
 
-<body>
+<body class="calculadora-page">
   <header class="header">
     <h1>Calculadora Energética</h1>
   </header>
@@ -28,55 +28,57 @@
     </ul>
   </nav>
 
+  <section class="card">
+    <h2>Simula tu consumo energético</h2>
+    <p>Esta calculadora te ayudará a estimar cuánta energía puedes ahorrar usando fuentes renovables.</p>
+  </section>
+
   <div class="layout-grid">
-    <section class="card">
-      <h2>Simula tu consumo energético</h2>
-      <p>
-        Esta calculadora te ayudará a estimar cuánta energía puedes ahorrar usando fuentes renovables.
-      </p>
-    </section>
-
     <main class="main-content">
-      <section class="calculadora">
-        <h2>Calcula tu Ahorro de Energía</h2>
-        <form id="form_ahorro">
-          <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required />
+      <!-- ⬇️ Contenedor agregado -->
+      <div class="calculadora-contenedor">
+        <section class="calculadora">
+          <h2>Calcula tu Ahorro de Energía</h2>
+          <form id="form_ahorro">
+            <div class="form-group">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" required />
+            </div>
+
+            <div class="form-group">
+              <label for="correo">Correo Electrónico:</label>
+              <input type="email" id="correo" name="correo" required />
+            </div>
+
+            <div class="form-group">
+              <label for="consumo">Consumo Energético Actual (kWh):</label>
+              <input type="number" id="consumo" name="consumo" min="0" required />
+            </div>
+
+            <div class="form-group">
+              <label for="tipo-energia">Tipo de Energía Renovable:</label>
+              <select name="tipo-energia" id="tipo-energia" required>
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="solar">Solar</option>
+                <option value="eolica">Eólica</option>
+                <option value="hidrogeno">Hidrógeno Verde</option>
+              </select>
+            </div>
+
+            <button type="button" id="calcular-btn">Calcular Ahorro</button>
+          </form>
+        </section>
+
+        <section id="resultados" class="resultados hidden">
+          <h2>Resultado del Ahorro Energético</h2>
+          <div class="result-card">
+            <p><strong>Ahorro Energético Estimado:</strong> <span id="ahorro-kwh"></span> kWh</p>
+            <p><strong>Reducción en Emisiones de CO<sub>2</sub>:</strong> <span id="ahorro-co2"></span> kg</p>
+            <p><strong>Ahorro Económico Estimado:</strong> <span id="ahorro-usd"></span> USD</p>
           </div>
-
-          <div class="form-group">
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" required />
-          </div>
-
-          <div class="form-group">
-            <label for="consumo">Consumo Energético Actual (kWh):</label>
-            <input type="number" id="consumo" name="consumo" min="0" required />
-          </div>
-
-          <div class="form-group">
-            <label for="tipo-energia">Tipo de Energía Renovable:</label>
-            <select name="tipo-energia" id="tipo-energia" required>
-              <option value="" disabled selected>Seleccione una opción</option>
-              <option value="solar">Solar</option>
-              <option value="eolica">Eólica</option>
-              <option value="hidrogeno">Hidrógeno Verde</option>
-            </select>
-          </div>
-
-          <button type="button" id="calcular-btn">Calcular Ahorro</button>
-        </form>
-      </section>
-
-      <section id="resultados" class="resultados hidden">
-        <h2>Resultado del Ahorro Energético</h2>
-        <div class="result-card">
-          <p><strong>Ahorro Energético Estimado:</strong> <span id="ahorro-kwh"></span> kWh</p>
-          <p><strong>Reducción en Emisiones de CO<sub>2</sub>:</strong> <span id="ahorro-co2"></span> kg</p>
-          <p><strong>Ahorro Económico Estimado:</strong> <span id="ahorro-usd"></span> USD</p>
-        </div>
-      </section>
+        </section>
+      </div>
+      <!-- ⬆️ Fin del contenedor -->
     </main>
   </div>
 
@@ -87,3 +89,5 @@
   <script src="js/script.js"></script>
 </body>
 </html>
+
+
