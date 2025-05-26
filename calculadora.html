@@ -1,76 +1,89 @@
 <!DOCTYPE html>
-<!-- Declara que este documento es HTML5 -->
-
 <html lang="es">
-<!-- Indica que el idioma del contenido es español -->
-
 <head>
   <meta charset="UTF-8">
-  <!-- Especifica que se usará la codificación UTF-8, que permite acentos y caracteres latinos -->
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Hace que la página sea responsiva, adaptándose al ancho de distintos dispositivos (móviles, tabletas, etc.) -->
-
   <title>Calculadora Energética</title>
-  <!-- Título que aparece en la pestaña del navegador. Refuerza el objetivo de esta página específica -->
-
   <link rel="stylesheet" href="css/style.css">
-  <!-- Enlaza con el archivo de estilos principal del sitio. Aplica los estilos definidos en CSS a esta página -->
-
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Importa la fuente "Orbitron" desde Google Fonts, con un diseño moderno y tecnológico -->
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Cuerpo principal del documento -->
-
   <header class="header">
-    <!-- Encabezado del sitio, con clase personalizada para aplicar estilos específicos -->
     <h1>Calculadora Energética</h1>
-    <!-- Título visible en la parte superior. Informa al usuario dónde está -->
   </header>
 
   <nav class="navbar">
-    <!-- Barra de navegación común a todas las páginas -->
     <ul>
       <li><a href="index.html">Inicio</a></li>
-      <!-- Enlace al home o página principal -->
       <li><a href="tipos.html">Tipos de Energía</a></li>
-      <!-- Enlace a la página educativa sobre fuentes de energía -->
       <li><a href="calculadora.html">Calculadora Energética</a></li>
-      <!-- Página actual. Permite volver desde otras secciones -->
       <li><a href="noticias.html">Noticias</a></li>
-      <!-- Enlace a sección de novedades, contexto real -->
       <li><a href="panel.html">Mi Panel</a></li>
-      <!-- Enlace al espacio personalizado del usuario -->
     </ul>
   </nav>
 
   <div class="layout-grid">
-    <!-- Contenedor con sistema de rejilla CSS para la estructura general -->
     <section class="card">
-      <!-- Sección temática con clase común 'energia' para mantener el estilo visual coherente -->
       <h2>Simula tu consumo energético</h2>
-      <!-- Subtítulo que introduce el objetivo de la herramienta -->
       <p>
         Esta calculadora te ayudará a estimar cuánta energía puedes ahorrar usando fuentes renovables.
       </p>
-      <!---->
-
-      <!-- COMENTARIO IMPORTANTE: Este es el lugar donde irá el formulario interactivo que permitirá a los usuarios introducir datos sobre su consumo eléctrico, tipo de energía, electrodomésticos, horas de uso, etc. 
-            El formulario puede incluir inputs numéricos, selectores de tipo de energía, sliders de consumo, botones de "Calcular", y un área para mostrar los resultados.
-            Esto favorece el aprendizaje experiencial (Dewey) y el uso de datos reales para la toma de decisiones. -->
     </section>
 
     <main class="main-content">
-      <!-- Contenido principal de la página -->
+      <section class="calculadora">
+        <h2>Calcula tu Ahorro de Energía</h2>
+        <form id="form_ahorro">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
 
+          <div class="form-group">
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required />
+          </div>
+
+          <div class="form-group">
+            <label for="consumo">Consumo Energético Actual (kWh):</label>
+            <input type="number" id="consumo" name="consumo" min="0" required />
+          </div>
+
+          <div class="form-group">
+            <label for="tipo-energia">Tipo de Energía Renovable:</label>
+            <select name="tipo-energia" id="tipo-energia" required>
+              <option value="" disabled selected>Seleccione una opción</option>
+              <option value="solar">Solar</option>
+              <option value="eolica">Eólica</option>
+              <option value="hidrogeno">Hidrógeno Verde</option>
+            </select>
+          </div>
+
+          <button type="button" id="calcular-btn">Calcular Ahorro</button>
+        </form>
+      </section>
+
+      <section id="resultados" class="resultados hidden">
+        <h2>Resultado del Ahorro Energético</h2>
+        <div class="result-card">
+          <p><strong>Ahorro Energético Estimado:</strong> <span id="ahorro-kwh"></span> kWh</p>
+          <p><strong>Reducción en Emisiones de CO<sub>2</sub>:</strong> <span id="ahorro-co2"></span> kg</p>
+          <p><strong>Ahorro Económico Estimado:</strong> <span id="ahorro-usd"></span> USD</p>
+        </div>
+      </section>
     </main>
   </div>
 
   <footer class="footer">
-    <!-- Pie de página del sitio. -->
     <p>&copy; 2025 Energías Renovables. Proyecto educativo colaborativo.</p>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

@@ -320,6 +320,60 @@
   border-radius: 8px;
 }
   
+
+/* =======================================
+   ESTILOS PARA LA CALCULADORA
+   ======================================= */
+   .calculadora {
+    background-color: #1a1f2e;
+    color: #00ffe7;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 2rem auto;
+    box-shadow: 0 0 20px rgba(0, 255, 231, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .calculadora input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #0f1117;
+    color: #00ffe7;
+    font-size: 1.2rem;
+    text-align: right;
+  }
+  
+  .calculadora .botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  .calculadora .botones button {
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #00ffe7;
+    color: #121826;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .calculadora .botones button:hover {
+    transform: scale(1.05);
+    background-color: #38A3A5;
+  }
+  
 /*haciendo todos la prueva*/
 /*para guardar de local a nuve: 
 git add . (o los archivos específicos) 
