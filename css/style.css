@@ -2,34 +2,42 @@
    ESTILOS GENERALES DEL DOCUMENTO
    ======================================= */
    body {
-    font-family: 'Orbitron', sans-serif; /* Usa una fuente futurista sin serifas */
-    background-color: #0f1117; /* Color de fondo oscuro que simula un entorno espacial */
-    color: #e0e0e0; /* Color del texto: gris claro para buen contraste */
+    font-family: 'Open-Sans', sans-serif; /* Usa una fuente futurista sin serifas */
+    font-size: 16px;
+    background-color: #f1f1f1; /* Color de fondo oscuro que simula un entorno espacial */
+    color: #0f1117; /* Color del texto: gris claro para buen contraste */
     margin: 0; /* Elimina márgenes exteriores predeterminados del navegador */
     padding: 0; /* Elimina todo el espacio interior del cuerpo */
-    line-height: 1.6; /* Aumenta la separación entre líneas de texto para mejorar la legibilidad */
+    line-height: 1.2; /* Aumenta la separación entre líneas de texto para mejorar la legibilidad */
     display: flex; /* Usa flexbox para el diseño del cuerpo */
     flex-direction: column; /* Organiza los elementos hijos en columna (de arriba hacia abajo) */
     min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% del alto de la pantalla */
+  }
+
+  h1, h2, p {
+    margin: 0;
+  }
+
+  h2 {
+    color: #22577A;
   }
   
   /* =======================================
      CABECERA (HEADER)
      ======================================= */
   .header {
-    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364); /* Degradado horizontal con tonos fríos futuristas */
-    color: #00ffe7; /* Texto con color cian brillante tipo neón */
+    background: #22577A; /* Degradado horizontal con tonos fríos futuristas */
+    color: #C7F9CC; /* Texto con color cian brillante tipo neón */
     text-align: center; /* Centra todo el texto dentro del header */
-    padding: 15px; /* Espacio interior alrededor del contenido */
-    box-shadow: 0 4px 10px rgba(0, 255, 231, 0.1); /* Sombra tenue hacia abajo para dar profundidad */
+    padding: 1rem; /* Espacio interior alrededor del contenido */
   }
   
   /* =======================================
      BARRA DE NAVEGACIÓN (NAVBAR)
      ======================================= */
   .navbar {
-    background-color: #121826; /* Fondo ligeramente más claro que el body para distinguirse */
-    padding: 15px; /* Espaciado interno para los elementos de navegación */
+    background-color: #C7F9CC; /* Fondo ligeramente más claro que el body para distinguirse */
+    padding: 0.5rem 8rem; /* Espaciado interno para los elementos de navegación */
     position: sticky; /* Se mantiene visible en la parte superior al hacer scroll */
     top: 0; /* Pegado a la parte superior de la ventana */
     z-index: 1000; /* Alta prioridad en la pila de capas para no quedar oculto */
@@ -40,46 +48,68 @@
     list-style-type: none; /* Elimina las viñetas (puntos) de la lista */
     padding-left: 0; /* Elimina la sangría izquierda predeterminada */
     margin: 0; /* Elimina el margen exterior de la lista */
-    justify-content: space-around; /* Distribuye los elementos equitativamente con espacio entre ellos */
+    justify-content: center; /* Distribuye los elementos equitativamente con espacio entre ellos */
+    gap: 2rem;
     flex-wrap: wrap; /* Permite que los elementos se acomoden en varias filas si no caben */
   }
   
   .navbar ul li a {
     text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
-    color: #00ffe7; /* Color de los enlaces en cian brillante */
+    color: #22577A; /* Color de los enlaces en cian brillante */
     font-weight: bold; /* Aplica negrita al texto */
     transition: color 0.3s; /* Transición suave de color al hacer hover */
   }
   
   .navbar ul li a:hover {
-    color: #ffffff; /* Cambia el color a blanco al pasar el cursor por encima */
+    color: #38A3A5; /* Cambia el color a blanco al pasar el cursor por encima */
   }
   
   /* =======================================
      CONTENEDOR PRINCIPAL EN GRID
      ======================================= */
   .layout-grid {
-    display: grid; /* Define este contenedor como una cuadrícula CSS */
-    gap: 20px; /* Espacio entre las celdas del grid */
-    padding: 20px; /* Espaciado interno del contenedor */
-    grid-template-columns: 1fr; /* Una sola columna por defecto */
-    flex: 1; /* Este contenedor se expande para ocupar todo el espacio disponible */
+    display: flex; /* Define este contenedor como una cuadrícula CSS */
+    flex-direction: column;
+    gap: 1.5rem; /* Espacio entre las celdas del grid */
+    padding: 2rem 8rem; /* Espaciado interno del contenedor */
   }
   
   /* =======================================
      GRID DE CONTENIDO PRINCIPAL
      ======================================= */
   .main-content {
-    
-    display: grid; /* Aplica diseño en cuadrícula */
-    gap: 20px; /* Separación entre tarjetas */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; 
     /* Repite columnas adaptables: mínimo 250px, máximo ocupa el espacio disponible */
   }
   
   /* =======================================
      TARJETAS DE ENERGÍA
      ======================================= */
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: justify;
+    align-items: center;
+    background-color: #e9ecef;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: .2s;
+  }    
+
+  .card img {
+    width: 100%;
+  }
+
+  .card:hover {
+    background-color: #C7F9CC;
+    transition: .2s;
+    transform: scale(1.02); /* Aplica un pequeño efecto de zoom al pasar el cursor */
+  }
+
   .energia img {
     max-width: 100%; /* La imagen no excede el ancho de su contenedor */
     height: auto; /* La altura se ajusta proporcionalmente al ancho */
@@ -156,12 +186,12 @@
      PIE DE PÁGINA
      ======================================= */
   .footer {
-    background-color: #121826; /* Color de fondo oscuro */
-    color: #00ffe7; /* Texto en cian */
+    background-color: #22577A; /* Color de fondo oscuro */
+    color: white; /* Texto en cian */
     text-align: center; /* Centra el contenido del footer */
-    padding: 15px; /* Espacio interior */
+    padding: 1rem; /* Espacio interior */
     margin-top: auto; /* Empuja el footer hacia el fondo si hay poco contenido */
-    font-size: 0.9rem; /* Tamaño de fuente ligeramente más pequeño */
+    font-size: 0.8rem; /* Tamaño de fuente ligeramente más pequeño */
   }
   
   /* =======================================
