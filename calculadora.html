@@ -62,8 +62,26 @@
             Esto favorece el aprendizaje experiencial (Dewey) y el uso de datos reales para la toma de decisiones. -->
     </section>
 
-    <main class="main-content">
+    <main class="main-content card">
       <!-- Contenido principal de la página -->
+ <form id="form_ahorro">
+        <div class="form-group">
+            <label for="consumo">Consumo Energético Actual (kWh):</label>
+            <input type="number" id="consumo" name="consumo" min="0" required />
+        </div>
+
+        <div class="form-group">
+            <label for="tipo-energia">Tipo de Energía Renovable:</label>
+            <select name="tipo-energia" id="tipo-energia" required>
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="solar">Solar</option>
+            <option value="eólica">Eólica</option>
+            <option value="hidrógeno verde">Hidrógeno Verde</option>
+            </select>
+        </div>
+
+        <button type="button" id="calcular-btn">Calcular Ahorro</button>
+        </form>
 
     </main>
   </div>

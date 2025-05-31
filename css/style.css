@@ -1,332 +1,451 @@
 /* =======================================
    ESTILOS GENERALES DEL DOCUMENTO
    ======================================= */
-   body {
-    font-family: 'Open-Sans', sans-serif; /* Usa una fuente futurista sin serifas */
-    font-size: 16px;
-    background-color: #f1f1f1; /* Color de fondo oscuro que simula un entorno espacial */
-    color: #0f1117; /* Color del texto: gris claro para buen contraste */
-    margin: 0; /* Elimina márgenes exteriores predeterminados del navegador */
-    padding: 0; /* Elimina todo el espacio interior del cuerpo */
-    line-height: 1.2; /* Aumenta la separación entre líneas de texto para mejorar la legibilidad */
-    display: flex; /* Usa flexbox para el diseño del cuerpo */
-    flex-direction: column; /* Organiza los elementos hijos en columna (de arriba hacia abajo) */
-    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% del alto de la pantalla */
-  }
+body {
+  font-family: 'Open-Sans', sans-serif;
+  font-size: 16px;
+  background-color: #f1f1f1;
+  color: #0f1117;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-  h1, h2, p {
-    margin: 0;
-  }
+h1, h2, p {
+  margin: 0;
+}
 
-  h2 {
-    color: #22577A;
-  }
-  
-  /* =======================================
-     CABECERA (HEADER)
-     ======================================= */
-  .header {
-    background: #22577A; /* Degradado horizontal con tonos fríos futuristas */
-    color: #C7F9CC; /* Texto con color cian brillante tipo neón */
-    text-align: center; /* Centra todo el texto dentro del header */
-    padding: 1rem; /* Espacio interior alrededor del contenido */
-  }
-  
-  /* =======================================
-     BARRA DE NAVEGACIÓN (NAVBAR)
-     ======================================= */
-  .navbar {
-    background-color: #C7F9CC; /* Fondo ligeramente más claro que el body para distinguirse */
-    padding: 0.5rem 8rem; /* Espaciado interno para los elementos de navegación */
-    position: sticky; /* Se mantiene visible en la parte superior al hacer scroll */
-    top: 0; /* Pegado a la parte superior de la ventana */
-    z-index: 1000; /* Alta prioridad en la pila de capas para no quedar oculto */
-  }
-  
-  .navbar ul {
-    display: flex; /* Usa flexbox para alinear horizontalmente los elementos de la lista */
-    list-style-type: none; /* Elimina las viñetas (puntos) de la lista */
-    padding-left: 0; /* Elimina la sangría izquierda predeterminada */
-    margin: 0; /* Elimina el margen exterior de la lista */
-    justify-content: center; /* Distribuye los elementos equitativamente con espacio entre ellos */
-    gap: 2rem;
-    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias filas si no caben */
-  }
-  
-  .navbar ul li a {
-    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
-    color: #22577A; /* Color de los enlaces en cian brillante */
-    font-weight: bold; /* Aplica negrita al texto */
-    transition: color 0.3s; /* Transición suave de color al hacer hover */
-  }
-  
-  .navbar ul li a:hover {
-    color: #38A3A5; /* Cambia el color a blanco al pasar el cursor por encima */
-  }
-  
-  /* =======================================
-     CONTENEDOR PRINCIPAL EN GRID
-     ======================================= */
-  .layout-grid {
-    display: flex; /* Define este contenedor como una cuadrícula CSS */
-    flex-direction: column;
-    gap: 1.5rem; /* Espacio entre las celdas del grid */
-    padding: 2rem 8rem; /* Espaciado interno del contenedor */
-  }
-  
-  /* =======================================
-     GRID DE CONTENIDO PRINCIPAL
-     ======================================= */
-  .main-content {
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem; 
-    /* Repite columnas adaptables: mínimo 250px, máximo ocupa el espacio disponible */
-  }
-  
-  /* =======================================
-     TARJETAS DE ENERGÍA
-     ======================================= */
+h2 {
+  color: #22577A;
+}
 
-  .card {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-align: justify;
-    align-items: center;
-    background-color: #e9ecef;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    transition: .2s;
-  }    
+/* =======================================
+   CABECERA (HEADER)
+   ======================================= */
+.header {
+  background: #22577A;
+  color: #C7F9CC;
+  text-align: center;
+  padding: 1rem;
+}
 
-  .card img {
-    width: 100%;
-  }
+/* =======================================
+   BARRA DE NAVEGACIÓN (NAVBAR)
+   ======================================= */
+.navbar {
+  background-color: #C7F9CC;
+  padding: 0.5rem 8rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  .card:hover {
-    background-color: #C7F9CC;
-    transition: .2s;
-    transform: scale(1.02); /* Aplica un pequeño efecto de zoom al pasar el cursor */
-  }
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
 
-  .energia img {
-    max-width: 100%; /* La imagen no excede el ancho de su contenedor */
-    height: auto; /* La altura se ajusta proporcionalmente al ancho */
-    border-radius: 8px; /* Bordes suavemente redondeados */
-    display: block; /* Elimina espacios inferiores por defecto en imágenes */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-    object-fit: cover; /* Cubre todo el contenedor sin deformar la imagen */
-  }
+.navbar ul li a {
+  text-decoration: none;
+  color: #22577A;
+  font-weight: bold;
+  transition: color 0.3s;
+}
 
-  .energia{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.navbar ul li a:hover {
+  color: #38A3A5;
+}
 
-    justify-content: space-around;
-  }
-  
-  .energia h2 {
-    text-align: center; /* Centra el título dentro de la tarjeta */
-  }
-  
-  .energia p {
-    text-align: center; /* Centra el texto del párrafo */
-  }
-  
-  .energia:hover {
-    transform: scale(1.02); /* Aplica un pequeño efecto de zoom al pasar el cursor */
-    box-shadow: 0 0 30px rgba(0, 255, 231, 0.2); /* Sombra luminosa para dar efecto de brillo */
-  }
-  
-  /* =======================================
-     MODAL (VENTANA EMERGENTE)
-     ======================================= */
-  .modal {
-    display: none; /* Oculto por defecto hasta que se active */
-    position: fixed; /* Fijado en toda la pantalla */
-    z-index: 2; /* Se sitúa por encima del resto del contenido */
-    left: 0; /* Alineado con el borde izquierdo */
-    top: 0; /* Alineado con el borde superior */
-    width: 100%; /* Ocupa todo el ancho de la ventana */
-    height: 100%; /* Ocupa todo el alto de la ventana */
-    background-color: rgba(15, 17, 23, 0.9); /* Fondo negro translúcido para enfocar la atención */
-    align-items: center; /* Centrado vertical */
-    justify-content: center; /* Centrado horizontal */
-  }
-  
-  .modal-content {
-    background-color: #121826; /* Fondo interno oscuro del modal */
-    margin: auto; /* Centra el modal horizontalmente */
-    padding: 20px; /* Espacio interno */
-    border-radius: 10px; /* Esquinas redondeadas */
-    width: 80%; /* Ocupa el 80% del ancho de la pantalla */
-    max-width: 600px; /* Máximo ancho del modal */
-    color: #00ffe7; /* Texto del modal en color neón */
-  }
-  
-  /* =======================================
-     BOTÓN PARA CERRAR EL MODAL
-     ======================================= */
-  .close {
-    color: #888; /* Color gris para el botón de cerrar */
-    position: absolute; /* Posicionado relativo al modal */
-    top: 10px; /* Separación desde arriba */
-    right: 20px; /* Separación desde la derecha */
-    font-size: 28px; /* Tamaño grande para ser visible */
-    font-weight: bold; /* Negrita */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-  }
-  
-  .close:hover {
-    color: #fff; /* Cambia el color a blanco al hacer hover */
-  }
-  
-  /* =======================================
-     PIE DE PÁGINA
-     ======================================= */
-  .footer {
-    background-color: #22577A; /* Color de fondo oscuro */
-    color: white; /* Texto en cian */
-    text-align: center; /* Centra el contenido del footer */
-    padding: 1rem; /* Espacio interior */
-    margin-top: auto; /* Empuja el footer hacia el fondo si hay poco contenido */
-    font-size: 0.8rem; /* Tamaño de fuente ligeramente más pequeño */
-  }
-  
-  /* =======================================
-     BOTÓN FLOTANTE DEL CHATBOT
-     ======================================= */
-  #chatbot-button {
-    position: fixed; /* Siempre visible en una posición específica */
-    bottom: 20px; /* 20px desde la parte inferior */
-    right: 20px; /* 20px desde la parte derecha */
-    background-color: #00ffe7; /* Color llamativo */
-    color: #121826; /* Color del icono (oscuro para contraste) */
-    border-radius: 50%; /* Hace el botón completamente circular */
-    padding: 15px; /* Tamaño del botón */
-    font-size: 24px; /* Tamaño del icono/texto */
-    cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
-    box-shadow: 0 4px 12px rgba(0, 255, 231, 0.3); /* Efecto de sombra brillante */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-  }
-  
-  /* =======================================
-     CAJA DEL CHATBOT EMERGENTE
-     ======================================= */
-  #chatbot-box {
-    position: fixed; /* Fijado en pantalla */
-    bottom: 80px; /* Aparece justo encima del botón flotante */
-    right: 20px; /* Pegado al borde derecho */
-    width: 300px; /* Ancho fijo de la caja */
-    background-color: #1a1f2e; /* Color de fondo oscuro */
-    border-radius: 12px; /* Bordes redondeados */
-    box-shadow: 0 0 15px rgba(0, 255, 231, 0.2); /* Efecto de resplandor */
-    display: none; /* Oculto por defecto */
-    flex-direction: column; /* Organización en columna */
-    z-index: 1001; /* Más arriba que el botón */
-  }
-  
-  /* Encabezado del chatbot */
-  .chatbot-header {
-    background-color: #00ffe7; /* Color neón para destacar */
-    color: #121826; /* Texto oscuro para contraste */
-    padding: 10px; /* Espacio interno */
-    font-weight: bold; /* Texto en negrita */
-    display: flex; /* Para alinear los elementos horizontalmente */
-    justify-content: space-between; /* Espacia el título y el botón de cerrar */
-    align-items: center; /* Centra verticalmente */
-    border-top-left-radius: 12px; /* Redondea esquina superior izquierda */
-    border-top-right-radius: 12px; /* Redondea esquina superior derecha */
-  }
-  
-  /* Cuerpo del chatbot */
-  .chatbot-body {
-    padding: 15px; /* Espacio interno */
-  }
-  
-  /* Campo de texto para escribir en el chatbot */
-  #chatbot-box input[type="text"] {
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    padding: 8px; /* Espacio interior */
-    margin-top: 10px; /* Separación del contenido anterior */
-    margin-bottom: 5px; /* Separación del botón */
-    border-radius: 6px; /* Bordes suavemente redondeados */
-    border: 1px solid #00ffe7; /* Borde del mismo color que el tema */
-    background-color: #0f1117; /* Fondo oscuro para el input */
-    color: #00ffe7; /* Color del texto */
-  }
-  
-  /* Botón para enviar mensaje en el chatbot */
-  #chatbot-box button {
-    width: 100%; /* Botón ocupa todo el ancho */
-    padding: 8px; /* Tamaño del botón */
-    background-color: #00ffe7; /* Fondo neón */
-    color: #121826; /* Texto oscuro */
-    border: none; /* Sin borde exterior */
-    border-radius: 6px; /* Bordes redondeados */
-    cursor: pointer; /* Apunta que se puede clicar */
-    font-weight: bold; /* Texto en negrita */
-    margin-top: 5px; /* Separación superior */
-  }
-  
-  /* Respuesta generada por el chatbot */
-  #respuestaBot {
-    margin-top: 10px; /* Espacio superior */
-    color: #00ffe7; /* Color del texto de respuesta */
-  }
-  
-  /* Botón para cerrar el chatbot */
-  .close-chatbot {
-    cursor: pointer; /* Se puede clicar */
-    font-size: 20px; /* Tamaño del ícono */
-  }
-  
-  /* =======================================
-     MEDIA QUERIES PARA RESPONSIVE DESIGN
-     ======================================= */
-  @media(max-width: 768px) {
-    .navbar ul {
-      flex-direction: column; /* Cambia a disposición vertical en pantallas medianas */
-      gap: 10px; /* Espacio entre enlaces */
-    }
-  
-    .layout-grid,
-    .main-content {
-      grid-template-columns: 1fr; /* Una sola columna para mejor lectura */
-    }
-  }
-  
-  @media(max-width: 480px) {
-    .header,
-    .footer {
-      padding: 15px; /* Ajuste para móviles pequeños */
-    }
-  }
+/* =======================================
+   CONTENEDOR PRINCIPAL EN GRID
+   ======================================= */
+.layout-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 8rem;
+  height: 80vh;
 
+}
 
-  .noticias-card{
-    background-color: #0f2027;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin: 10px;
-    text-align: center;
-  }
-  .noticias-card img{
+/* =======================================
+   GRID DE CONTENIDO PRINCIPAL
+   ======================================= */
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* =======================================
+   TARJETAS DE ENERGÍA
+   ======================================= */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: justify;
+  align-items: center;
+  background-color: #e9ecef;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: .2s;
+}
+
+.card img {
   width: 100%;
+}
+/* =======================================
+   SECCIÓN DE ENERGÍA
+   ======================================= */
+.energia {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-around;
+}
+
+.energia img {
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
 }
-  
-/*haciendo todos la prueva*/
-/*para guardar de local a nuve: 
-git add . (o los archivos específicos) 
-git commit -m "Tu mensaje" 
-git push */ 
-/* para traer la copia de la nuve a visual estudio: 
-git pull*/
-/*git branch 
-git checkout main 
-git pull origin main */
+
+.energia h2, .energia p {
+  text-align: center;
+}
+
+.energia:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(0, 255, 231, 0.2);
+}
+
+/* =======================================
+   MODAL (VENTANA EMERGENTE)
+   ======================================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 17, 23, 0.9);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #121826;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  color: #00ffe7;
+}
+
+/* =======================================
+   BOTÓN PARA CERRAR EL MODAL
+   ======================================= */
+.close {
+  color: #888;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+/* =======================================
+   PIE DE PÁGINA
+   ======================================= */
+.footer {
+  background-color: #dbe0e4;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  font-size: 0.8rem;
+}
+
+/* =======================================
+   BOTÓN FLOTANTE DEL CHATBOT
+   ======================================= */
+#chatbot-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #00ffe7;
+  color: #121826;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 255, 231, 0.3);
+  z-index: 1000;
+}
+
+/* =======================================
+   CAJA DEL CHATBOT EMERGENTE
+   ======================================= */
+#chatbot-box {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  background-color: #1a1f2e;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 231, 0.2);
+  display: none;
+  flex-direction: column;
+  z-index: 1001;
+}
+
+.chatbot-header {
+  background-color: #00ffe7;
+  color: #121826;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.chatbot-body {
+  padding: 15px;
+}
+
+#chatbot-box input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  border: 1px solid #00ffe7;
+  background-color: #0f1117;
+  color: #00ffe7;
+}
+
+#chatbot-box button {
+  width: 100%;
+  padding: 8px;
+  background-color: #00ffe7;
+  color: #121826;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+#respuestaBot {
+  margin-top: 10px;
+  color: #00ffe7;
+}
+
+.close-chatbot {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* =======================================
+   MEDIA QUERIES
+   ======================================= */
+@media(max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .layout-grid,
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 480px) {
+  .header,
+  .footer {
+    padding: 15px;
+  }
+}
+
+/* =======================================
+   TARJETAS DE NOTICIAS
+   ======================================= */
+.noticias-card {
+  background-color:  #d4f4dd; /* verde muy claro, fondo suave */
+  border: 1px solid #a3d9a5; /* verde medio para el borde */
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(27, 94, 32, 0.15); /* sombra verde suave */
+  margin: 10px;
+  text-align: center;
+  color: #2b4d27; /* verde oscuro para texto */
+  transition: 0.3s;
+}
+
+.noticias-card h3 {
+  min-height: 60px;
+  font-size: 18px;
+  color: #1a4421; /* verde más oscuro para el título */
+  margin-bottom: 10px;
+}
+
+.noticias-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.noticias-card p {
+  color: #3a6b35; /* verde medio para el texto del párrafo */
+  font-size: 15px;
+  text-align: justify;
+  margin-top: 10px;
+}
+
+.noticias-card:hover {
+  transform: scale(1.02);
+  background-color: #a3d9a5; /* verde claro más intenso en hover */
+  box-shadow: 0 0 15px rgba(83, 157, 70, 0.4); /* sombra verde más visible */
+}
+
+.calculadora {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="number"],
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button#calcular-btn {
+  background-color: #005299;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+button#calcular-btn:hover {
+  background-color: #013664;
+}
+
+.resultados {
+  width: 100%;
+  max-width: 600px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+/* Estilo general */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f8ff;
+  color: #00334e;
+}
+
+/* Encabezado */
+.header {
+  background-color: #0d4a6b;
+  color: #ccffd5;
+  padding: 20px;
+  text-align: center;
+}
+
+.nav a {
+  color: #ccffd5;
+  text-decoration: none;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+/* Contenido principal */
+.contenido {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: #00263a;
+  color: #66ffea;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+.card h2, .card h3 {
+  color: #49e2d2;
+}
+
+.card ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+/* Footer */
+.footer {
+  background-color: #0d4a6b;
+  color: #ccffd5;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}

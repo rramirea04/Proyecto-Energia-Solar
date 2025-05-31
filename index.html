@@ -1,137 +1,99 @@
 <!DOCTYPE html>
-<!-- Define que este archivo es un documento HTML5 -->
-
 <html lang="es">
-<!-- Indica que el idioma del contenido es español -->
-
 <head>
   <meta charset="UTF-8" />
-  <!-- Especifica la codificación de caracteres como UTF-8, compatible con acentos y símbolos -->
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- Hace que la página sea responsive, adaptándose al tamaño de la pantalla del dispositivo -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inicio - Energías Renovables</title>
-  <!-- Título que aparece en la pestaña del navegador -->
-
   <link rel="stylesheet" href="css/style.css" />
-  <!-- Enlace al archivo CSS externo que define los estilos visuales -->
-
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Importa la fuente futurista Orbitron desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
 </head>
-
 <body>
-  <!-- Comienzo del cuerpo de la página web -->
-
-  <header class="header">
-    <!-- Encabezado principal del sitio -->
+  <header class="header" role="banner">
     <h1>Energías Sostenibles y Renovables</h1>
-    <!-- Título principal del sitio web -->
   </header>
 
-  <nav class="navbar">
-    <!-- Barra de navegación del sitio -->
+  <nav class="navbar" role="navigation" aria-label="Menú principal">
     <ul>
-      <!-- Lista de enlaces de navegación -->
       <li><a href="index.html">Inicio</a></li>
-      <!-- Enlace a la página de inicio -->
       <li><a href="tipos.html">Tipos de Energía</a></li>
-      <!-- Enlace a la sección educativa sobre tipos de energía -->
       <li><a href="calculadora.html">Calculadora Energética</a></li>
-      <!-- Enlace a una herramienta interactiva de cálculo -->
       <li><a href="noticias.html">Noticias</a></li>
-      <!-- Enlace a noticias o novedades del sector energético -->
       <li><a href="panel.html">Mi Panel</a></li>
-      <!-- Enlace al área personalizada del usuario -->
     </ul>
   </nav>
 
   <div class="layout-grid">
-    <!-- Contenedor principal que usa CSS Grid para estructurar el contenido -->
-
-    <main class="main-content">
-      <!-- Sección principal del contenido del sitio -->
-
-      <section class="card fade-in-up">
-        <!-- Sección con animación para dar la bienvenida -->
-        <h2>Bienvenido</h2>
-        <!-- Subtítulo de sección -->
+    <main class="main-content" role="main">
+      <section class="card fade-in-up" aria-labelledby="bienvenido-title">
+        <h2 id="bienvenido-title">Bienvenido</h2>
         <p>
-          Explora el mundo de las energías sostenibles, aprende sobre sus tipos, beneficios y cómo usarlas en tu vida diaria.
-        </p>
-        <!-- Párrafo introductorio motivacional y educativo -->
-      </section>
+          Explora el fascinante mundo de las energías sostenibles, descubre los diferentes tipos que existen,
+          conoce sus beneficios para el medio ambiente y la sociedad, y aprende cómo puedes incorporarlas en tu vida diaria para contribuir a un futuro más limpio y saludable.</p>
+<img 
+    src="https://megustavolar.iberia.com/wp-content/uploads/2021/06/istock-881736772.jpg" 
+    alt="Representación gráfica de energías renovables" 
+    style="width:100%; height:auto;" />
 
-      <section class="card fade-in-up" id="video">
-        <!-- Sección que incluye un video educativo con animación -->
-        <h2>¿Qué son las energías renovables?</h2>
-        <!-- Pregunta guía como recurso didáctico -->
-        <img alt="" src="data:image/jpeg;base64,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">
-        <!-- Video embebido desde YouTube. Explicación visual para aprendizaje multimodal -->
       </section>
+<section class="card fade-in-up" id="video" aria-labelledby="video-title">
+  <h2 id="video-title">¿Qué son las energías?</h2>
+    <p>
+    Las energías renovables son aquellas fuentes de energía que se obtienen de recursos naturales que se regeneran de forma constante y no se agotan con su uso. Entre las principales energías renovables están la solar, eólica, hidráulica, biomasa y geotérmica. Estas energías contribuyen a reducir la contaminación y el impacto ambiental, promoviendo un desarrollo sostenible y cuidando el planeta.
+  </p>
+  <!-- Imagen educativa en lugar del video -->
+  <img 
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSds7RxOSTBrO__KUGvK9iWGkL5foua2WhmAA&s" 
+    alt="Representación gráfica de energías renovables" 
+    style="width:100%; height:auto;" />
+</section>
 
-      <section class="card fade-in-up extra">
-        <!-- Sección adicional con animación -->
-        <h2>Explora más</h2>
-        <p>Visita nuestra sección de noticias y novedades sobre energía sostenible.</p>
-        <!-- Invitación a continuar navegando y aprendiendo -->
+      <section class="card fade-in-up extra" aria-labelledby="explora-mas-title">
+        <h2 id="explora-mas-title">Explora más</h2>
+        <p>Explora más contenidos y mantente al día con las últimas noticias,
+        avances y novedades sobre energía sostenible. Descubre cómo estas innovaciones están transformando nuestro mundo y cómo tú puedes ser parte del cambio.</p>
+ <img 
+    src="https://content.presspage.com/uploads/685/c1920_santamarta31.jpg?64848" 
+    alt="Representación gráfica de energías renovables" 
+    style="width:100%; height:auto;" />
+</p>
       </section>
     </main>
 
-    <!-- SECCIÓN "Contáctanos" justo antes del footer -->
-    <section class="card fade-in-up contacto">
-      <!-- Sección para contacto con animación -->
-      <h2>Contáctanos</h2>
+    <aside class="card fade-in-up contacto" role="complementary" aria-labelledby="contacto-title">
+      <h2 id="contacto-title">Contáctanos</h2>
       <p>
-        ¿Tienes dudas? Escríbenos a 
+        ¿Tienes dudas? Escríbenos a
         <a href="mailto:energia@renovable.com">energia@renovable.com</a>
       </p>
-      <!-- Correo de contacto como recurso de comunicación con los desarrolladores o docentes -->
-    </section>
+    </aside>
   </div>
 
   <!-- Botón flotante del chatbot -->
-  <div id="chatbot-button" onclick="toggleChatbot()">💬</div>
-  <!-- Botón flotante que activa el chatbot educativo -->
+  <button id="chatbot-button" aria-label="Abrir chatbot" onclick="toggleChatbot()">💬</button>
 
   <!-- Contenedor flotante del chatbot -->
-  <div id="chatbot-box">
-    <!-- Caja emergente del chatbot -->
+  <div id="chatbot-box" role="dialog" aria-modal="true" aria-labelledby="chatbot-title" hidden>
     <div class="chatbot-header">
-      <!-- Encabezado del chatbot -->
-      <span>Chatbot Energía</span>
-      <!-- Título del chatbot -->
-      <span class="close-chatbot" onclick="toggleChatbot()">&times;</span>
-      <!-- Botón para cerrar el chatbot -->
+      <span id="chatbot-title">Chatbot Energía</span>
+      <button class="close-chatbot" aria-label="Cerrar chatbot" onclick="toggleChatbot()">&times;</button>
     </div>
 
     <div class="chatbot-body">
-      <!-- Cuerpo del chatbot donde se muestra el diálogo -->
       <p><strong>Chatbot:</strong> ¡Hola! ¿En qué puedo ayudarte?</p>
-      <!-- Mensaje inicial del chatbot -->
 
-      <input type="text" id="userInput" placeholder="Escribe tu pregunta" />
-      <!-- Campo de texto para que el usuario escriba su consulta -->
+      <label for="userInput" class="visually-hidden">Escribe tu pregunta</label>
+      <input type="text" id="userInput" placeholder="Escribe tu pregunta" aria-describedby="respuestaBot" />
 
       <button onclick="responder()">Enviar</button>
-      <!-- Botón que envía la pregunta al chatbot -->
 
-      <div id="respuestaBot"></div>
-      <!-- Contenedor donde se muestra la respuesta del chatbot -->
+      <div id="respuestaBot" aria-live="polite"></div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <!-- Pie de página del sitio -->
+  <footer class="footer" role="contentinfo">
     <p>&copy; 2025 Energías Renovables. Proyecto educativo colaborativo.</p>
-    <!-- Aviso de derechos y autoría -->
   </footer>
 
   <script src="js/script.js"></script>
-  <!-- Enlace al archivo JavaScript que controla el comportamiento del chatbot u otras funciones dinámicas -->
-
 </body>
 </html>
-
