@@ -234,6 +234,7 @@ h2 {
 
 .chatbot-body {
   padding: 15px;
+  color: #00ffe7;
 }
 
 #chatbot-box input[type="text"] {
@@ -243,7 +244,7 @@ h2 {
   margin-bottom: 5px;
   border-radius: 6px;
   border: 1px solid #00ffe7;
-  background-color: #0f1117;
+  background-color:#0f1117;
   color: #00ffe7;
 }
 
@@ -251,7 +252,7 @@ h2 {
   width: 100%;
   padding: 8px;
   background-color: #00ffe7;
-  color: #121826;
+  color: #0f1117;
   border: none;
   border-radius: 6px;
   cursor: pointer;
