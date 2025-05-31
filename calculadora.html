@@ -28,12 +28,12 @@
     </ul>
   </nav>
 
-  <section class="card">
-    <h2>Simula tu consumo energético</h2>
-    <p>Esta calculadora te ayudará a estimar cuánta energía puedes ahorrar usando fuentes renovables.</p>
-  </section>
-
   <div class="layout-grid">
+    <section class="card">
+      <h2>Simula tu consumo energético</h2>
+      <p>Esta calculadora te ayudará a estimar cuánta energía puedes ahorrar usando fuentes renovables.</p>
+    </section>
+
     <main class="main-content">
       <!-- ⬇️ Contenedor agregado -->
       <div class="calculadora-contenedor">
@@ -55,15 +55,15 @@
               <input type="number" id="consumo" name="consumo" min="0" required />
             </div>
 
-            <div class="form-group">
-              <label for="tipo-energia">Tipo de Energía Renovable:</label>
-              <select name="tipo-energia" id="tipo-energia" required>
-                <option value="" disabled selected>Seleccione una opción</option>
-                <option value="solar">Solar</option>
-                <option value="eolica">Eólica</option>
-                <option value="hidrogeno">Hidrógeno Verde</option>
-              </select>
-            </div>
+           <select name="tipo-energia" id="tipo-energia" required>
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="solar">Solar</option>
+            <option value="eolica">Eólica</option>
+            <option value="hidrogeno">Hidrógeno Verde</option>
+            <option value="hidraulica">Hidráulica</option>
+            <option value="biomasa">Biomasa</option>
+            <option value="geotermica">Geotérmica</option>
+          </select>
 
             <button type="button" id="calcular-btn">Calcular Ahorro</button>
           </form>

@@ -31,20 +31,29 @@ function responder() {
             return;
         }
 
-        let factorAhorro;
-        switch (tipoEnergia) {
-            case "solar":
-                factorAhorro = 0.2;
-                break;
-            case "eólica":
-                factorAhorro = 0.25;
-                break;
-            case "hidrógeno verde":
-                factorAhorro = 0.3;
-                break;
-            default:
-                factorAhorro = 0;
-        }
+       let factorAhorro;
+     switch (tipoEnergia) {
+    case "solar":
+        factorAhorro = 0.2;
+        break;
+    case "eolica":
+        factorAhorro = 0.25;
+        break;
+    case "hidrogeno":
+        factorAhorro = 0.3;
+        break;
+    case "hidraulica":
+        factorAhorro = 0.22;
+        break;
+    case "biomasa":
+        factorAhorro = 0.18;
+        break;
+    case "geotermica":
+        factorAhorro = 0.28;
+        break;
+    default:
+        factorAhorro = 0;
+}
 
         const ahorroEnergetico = consumo * factorAhorro;
         const reduccionCo2 = ahorroEnergetico * 0.5;

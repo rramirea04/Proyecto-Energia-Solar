@@ -72,8 +72,7 @@ h2 {
   flex-direction: column;
   gap: 1.5rem;
   padding: 2rem 8rem;
-  height: 80vh;
-
+  height: fit-content;
 }
 
 /* =======================================
@@ -102,6 +101,10 @@ h2 {
 
 .card img {
   width: 100%;
+}
+
+.card:hover {
+  transform: scale(1.02);
 }
 /* =======================================
    SECCIÓN DE ENERGÍA
@@ -180,8 +183,7 @@ h2 {
   background-color: #dbe0e4;
   color: white;
   text-align: center;
-  padding: 1rem;
-  margin-top: auto;
+  padding: 1rem 0;
   font-size: 0.8rem;
 }
 
@@ -331,64 +333,109 @@ h2 {
   box-shadow: 0 0 15px rgba(83, 157, 70, 0.4); /* sombra verde más visible */
 }
 
+/* =======================================
+   ESTILO PERSONALIZADO DE LA CALCULADORA
+   ======================================= */
+.calculadora-contenedor {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
 .calculadora {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #e9ecef; /* Fondo claro como las cards */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(34, 87, 122, 0.2);
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
+  border-left: 5px solid #38A3A5;
+}
+
+.calculadora h2 {
+  color: #22577A;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
 label {
   font-weight: bold;
-  margin-bottom: 5px;
+  color: #0f1117;
 }
 
+input[type="text"],
+input[type="email"],
 input[type="number"],
 select {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1rem;
+  background-color: #fff;
+  color: #0f1117;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #38A3A5;
 }
 
 button#calcular-btn {
-  background-color: #005299;
-  color: white;
+  background-color: #22577A;
+  color: #C7F9CC;
+  padding: 12px 20px;
   border: none;
-  padding: 10px;
+  border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 4px;
-  transition: 0.3s;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 button#calcular-btn:hover {
-  background-color: #013664;
+  background-color: #38A3A5;
+  color: #ffffff;
 }
 
 .resultados {
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
   background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #38A3A5;
+}
+
+.resultados h2 {
+  color: #22577A;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .result-card {
   background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 4px;
-  text-align: left;
+  padding: 1rem;
+  border-radius: 6px;
+  line-height: 1.5;
+  color: #0f1117;
 }
+
+.result-card strong {
+  color: #22577A;
+}
+
 
 .hidden {
   display: none;
@@ -443,9 +490,8 @@ body {
 
 /* Footer */
 .footer {
+  width: 100%;
   background-color: #0d4a6b;
   color: #ccffd5;
   text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
 }
