@@ -37,35 +37,35 @@
             <!-- Sección Solar -->
             <section class="card" onclick="openModal('modal-solar')">
                 <h2>Solar</h2>
-                <img src="img/solar_urbano1.png" alt="Energía Solar">
+                <img src="{{ url_for(\'static\', filename=\'img/solar_urbano1.png\') }}" alt="Energía Solar">
                 <p>La energía solar aprovecha la radiación del sol para generar electricidad o calor.</p>
             </section>
 
             <!-- Sección Eólica -->
             <section class="card" onclick="openModal('modal-eolica')">
                 <h2>Eólica</h2>
-                <img src="img/parque_eolico.png" alt="Energía Eólica">
+                <img src="{{ url_for(\'static\', filename=\'img/parque_eolico.png\') }}" alt="Energía Eólica">
                 <p>La energía eólica utiliza la fuerza del viento para producir electricidad mediante aerogeneradores.</p>
             </section>
 
             <!-- Sección Hidráulica -->
             <section class="card" onclick="openModal('modal-hidraulica')">
                 <h2>Hidráulica</h2>
-                <img src="img/solar_urbano2.png" alt="Energía Hidráulica">
+                <img src="{{ url_for(\'static\', filename=\'img/solar_urbano2.png\') }}" alt="Energía Hidráulica">
                 <p>Se genera a partir del movimiento del agua, como ríos o presas, para accionar turbinas eléctricas.</p>
             </section>
 
             <!-- Sección Biomasa -->
             <section class="card" onclick="openModal('modal-biomasa')">
                 <h2>Biomasa</h2>
-                <img src="img/solar_urbano1.png" alt="Energía de Biomasa">
+                <img src="{{ url_for(\'static\', filename=\'img/solar_urbano1.png\') }}" alt="Energía de Biomasa">
                 <p>Proviene de materia orgánica como madera, residuos agrícolas o desechos animales.</p>
             </section>
 
             <!-- Sección Geotérmica -->
             <section class="card" onclick="openModal('modal-geotermica')">
                 <h2>Geotérmica</h2>
-                <img src="img/geotermia.png" alt="Energía Geotérmica">
+                <img src="{{ url_for(\'static\', filename=\'img/geotermia.png\') }}" alt="Energía Geotérmica">
                 <p>Utiliza el calor del interior de la Tierra para generar energía térmica y eléctrica.</p>
             </section>
         </main>
