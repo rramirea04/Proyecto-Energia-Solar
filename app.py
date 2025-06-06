@@ -1,9 +1,26 @@
-from flask import Flask, send_file
+
+from flask import Flask, render_template, send_file
 import matplotlib.pyplot as plt
 import io
-import os  # <-- Importamos os para leer el puerto desde Render
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='.', template_folder='.')
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/panel')
+def panel():
+    return render_template('panel.html')
+
+@app.route('/calculadora')
+def calculadora():
+    return render_template('calculadora.html')
+
+@app.route('/noticias')
+def noticias():
+    return render_template('noticias.html')
 
 @app.route('/grafica')
 def grafica():
@@ -14,23 +31,19 @@ def grafica():
 
     plt.figure(figsize=(15,6))
     plt.plot(meses, ventas, color='blue', marker='o', linestyle='-', linewidth=2, label='Ventas 2025')
-    plt.title('Evolución de Ventas Mensuales en 2025', fontsize=16, fontweight='bold')
-    plt.xlabel('Meses', fontsize=14)
-    plt.ylabel('Ventas', fontsize=14)
-    plt.xticks(rotation=45, fontsize=12)
-    plt.yticks(fontsize=12)
-    plt.grid(color='gray', linestyle='--', linewidth=0.5, alpha=0.7)
-    plt.legend(fontsize=12)
+    plt.title('Evolución de Ventas Mensuales en 2025')
+    plt.xlabel('Meses')
+    plt.ylabel('Ventas')
+    plt.xticks(rotation=45)
+    plt.grid(True)
+    plt.legend()
     plt.tight_layout()
 
     buf = io.BytesIO()
     plt.savefig(buf, format='png')
     buf.seek(0)
-    plt.close()
-
     return send_file(buf, mimetype='image/png')
 
 if __name__ == '__main__':
-    # Usar puerto proporcionado por Render, o 10000 localmente
-    port = int(os.environ.get("PORT", 10000))
+    port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
