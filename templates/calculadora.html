@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculadora Energética</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     .hidden {
@@ -20,11 +20,11 @@
 
   <nav class="navbar">
     <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="tipos.html">Tipos de Energía</a></li>
-      <li><a href="calculadora.html">Calculadora Energética</a></li>
-      <li><a href="noticias.html">Noticias</a></li>
-      <li><a href="panel.html">Mi Panel</a></li>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/tipos">Tipos de Energía</a></li>
+      <li><a href="/calculadora">Calculadora Energética</a></li>
+      <li><a href="/noticias">Noticias</a></li>
+      <li><a href="/panel">Mi Panel</a></li>
     </ul>
   </nav>
 
@@ -86,7 +86,7 @@
     <p>&copy; 2025 Energías Renovables. Proyecto educativo colaborativo.</p>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
 

@@ -6,7 +6,7 @@
     <title>Tipos de Energía</title> <!-- Título que aparece en la pestaña del navegador -->
     
     <!-- Vincula una hoja de estilos CSS local -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     
     <!-- Fuente personalizada desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -21,11 +21,11 @@
     <!-- Menú de navegación principal del sitio -->
     <nav class="navbar">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="tipos.html">Tipos de Energía</a></li>
-            <li><a href="calculadora.html">Calculadora Energética</a></li>
-            <li><a href="noticias.html">Noticias</a></li>
-            <li><a href="panel.html">Mi Panel</a></li>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/tipos">Tipos de Energía</a></li>
+            <li><a href="/calculadora">Calculadora Energética</a></li>
+            <li><a href="/noticias">Noticias</a></li>
+            <li><a href="/panel">Mi Panel</a></li>
         </ul>
     </nav>
 
