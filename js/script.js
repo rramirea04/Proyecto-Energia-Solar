@@ -71,7 +71,6 @@ function responder() {
     });
   });
 
-
 //calculadora
   document.addEventListener("DOMContentLoaded", function () {
     const calcularBtn = document.getElementById("calcular-btn");
