@@ -1,6 +1,7 @@
 from flask import Flask, send_file
 import matplotlib.pyplot as plt
 import io
+import os  # <-- Importamos os para leer el puerto desde Render
 
 app = Flask(__name__)
 
@@ -29,6 +30,7 @@ def grafica():
 
     return send_file(buf, mimetype='image/png')
 
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
+    # Usar puerto proporcionado por Render, o 10000 localmente
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)
