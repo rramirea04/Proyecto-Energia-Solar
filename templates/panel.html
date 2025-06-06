@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,17 +24,13 @@
   </nav>
 
   <div class="layout-grid">
-
-    <section class="card">
-      <h2>Tu espacio personalizado</h2>
-      <p>Aquí podrás guardar tus resultados, preferencias y recursos educativos sobre energías renovables.</p>
-    
-<img src="{{ url_for('grafico') }}" alt="Gráfica energética" style="max-width:100%; height:auto;">
-</section>
-
-    <main class="main-content" style="height: 50vh;">
-      <h2>Gráfica generada dinámicamente</h2>
-      <img src="https://proyecto-energia-solar.onrender.com" alt="Gráfica energética" style="max-width:100%; height:auto;">
+    <main class="main-content">
+      <section class="card">
+        <h2>Tu espacio personalizado</h2>
+        <p>Aquí podrás guardar tus resultados, preferencias y recursos educativos sobre energías renovables.</p>
+        <h2>Gráfica generada dinámicamente</h2>
+        <img src="{{ url_for('grafico') }}" alt="Gráfica energética" style="max-width:100%; height:auto;">
+      </section>
     </main>
   </div>
 
@@ -43,5 +38,4 @@
     <p>&copy; 2025 Energías Renovables. Proyecto educativo colaborativo.</p>
   </footer>
 </body>
-
 </html>
