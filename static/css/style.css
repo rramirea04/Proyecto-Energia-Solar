@@ -536,3 +536,29 @@ body {
   text-align: center;
 }
 
+/* =======================================
+   ESTILO PERSONALIZADO DE LA GRAFICA
+   ======================================= */
+    
+   .graficas-fila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .grafica {
+    flex: 1 1 300px;
+    text-align: center;
+  }
+  
+  .grafica img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: #fff;
+  }
+  

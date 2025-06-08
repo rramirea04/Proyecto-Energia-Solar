@@ -25,17 +25,35 @@
 
   <div class="layout-grid">
     <main class="main-content">
-      <section class="card">
-        <h2>Tu espacio personalizado</h2>
-        <p>Aquí podrás guardar tus resultados, preferencias y recursos educativos sobre energías renovables.</p>
+    <!-- Sección personalizada del usuario con tres gráficas alineadas -->
+<section class="card">
+  <h2>Tu espacio personalizado</h2>
+  <p>Aquí podrás guardar tus resultados, preferencias y recursos educativos sobre energías renovables.</p>
 
-        <!-- NUEVAS GRÁFICAS -->
-        <h2>Histograma de Talento Tech</h2>
-        <img src="{{ url_for('grafico_histograma') }}" alt="Histograma Talento Tech" style="max-width:100%; height:auto;">
+  <!-- Contenedor que alinea las gráficas en fila usando Flexbox -->
+  <div class="graficas-fila">
 
-        <h2>Distribución de mercado</h2>
-        <img src="{{ url_for('grafico_pie') }}" alt="Gráfico circular mercado" style="max-width:100%; height:auto;">
-      </section>
+    <!-- Gráfica 1: Línea de consumo energético -->
+    <div class="grafica">
+      <h3>Gráfica original</h3>
+      <img src="{{ url_for('grafico') }}" alt="Gráfica energética">
+    </div>
+
+    <!-- Gráfica 2: Histograma generado con datos aleatorios -->
+    <div class="grafica">
+      <h3>Histograma de Talento Tech</h3>
+      <img src="{{ url_for('grafico_histograma') }}" alt="Histograma Talento Tech">
+    </div>
+
+    <!-- Gráfica 3: Pie chart de participación de empresas -->
+    <div class="grafica">
+      <h3>Distribución de mercado</h3>
+      <img src="{{ url_for('grafico_pie') }}" alt="Gráfico circular mercado">
+    </div>
+
+  </div> <!-- Fin del contenedor de gráficas -->
+</section>
+
     </main>
   </div>
 
