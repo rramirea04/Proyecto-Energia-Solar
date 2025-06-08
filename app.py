@@ -1,96 +1,106 @@
+# ------------------------------------------
 # Importación de librerías necesarias
-import os                  # Permite acceder a variables del entorno del sistema (como el puerto)
-import io                  # Permite trabajar con flujos de datos en memoria (para enviar la imagen generada)
-import matplotlib.pyplot as plt  # Librería para crear gráficos
-import numpy as np         # Librería para manejar datos numéricos (aquí se usa para generar datos aleatorios)
+# ------------------------------------------
+import os                  # Para acceder a variables del entorno del sistema
+import io                  # Para manejar flujos de datos en memoria (como imágenes)
+import numpy as np         # Para cálculos numéricos y datos aleatorios
+import matplotlib
+matplotlib.use('Agg')      # Configura matplotlib para entornos sin entorno gráfico (como Render)
+import matplotlib.pyplot as plt  # Librería de gráficos
 from flask import Flask, render_template, Response  # Funciones principales de Flask
 
 # Inicializa la aplicación Flask
 app = Flask(__name__)
 
-# ----------------------------
-# Rutas para las distintas páginas de la aplicación
-# ----------------------------
+# ------------------------------------------
+# Rutas para renderizar páginas HTML
+# ------------------------------------------
 
 @app.route('/')
 def index():
-    # Renderiza el archivo HTML llamado index.html
-    return render_template('index.html')
+    return render_template('index.html')  # Página de inicio
 
 @app.route('/panel')
 def panel():
-    # Renderiza el archivo HTML llamado panel.html
-    return render_template('panel.html')
+    return render_template('panel.html')  # Página personalizada del usuario
 
 @app.route('/calculadora')
 def calculadora():
-    # Renderiza el archivo HTML llamado calculadora.html
-    return render_template('calculadora.html')
+    return render_template('calculadora.html')  # Calculadora energética
 
 @app.route('/noticias')
 def noticias():
-    # Renderiza el archivo HTML llamado noticias.html
-    return render_template('noticias.html')
+    return render_template('noticias.html')  # Noticias del sector
 
 @app.route('/tipos')
 def tipos():
-    # Renderiza el archivo HTML llamado tipos.html
-    return render_template('tipos.html')
+    return render_template('tipos.html')  # Tipos de energía
 
-# ----------------------------
-# Rutas que generan gráficas dinámicamente
-# ----------------------------
+# ------------------------------------------
+# Rutas que generan y devuelven gráficos dinámicamente
+# ------------------------------------------
 
-# 📊 Ruta 1: Genera un histograma con datos aleatorios
+# 📊 Ruta 1: Histograma con datos aleatorios
 @app.route('/grafico-histograma')
 def grafico_histograma():
-    datos = np.random.randn(1000)  # Genera 1000 datos aleatorios con distribución normal
-    fig, ax = plt.subplots()       # Crea la figura y el eje para la gráfica
-    ax.hist(datos, bins=20, color='blue', edgecolor='black')  # Dibuja el histograma con 20 barras
-
-    # Agrega título y etiquetas a los ejes
+    datos = np.random.randn(1000)  # 1000 datos aleatorios con distribución normal
+    fig, ax = plt.subplots()
+    ax.hist(datos, bins=20, color='blue', edgecolor='black')
     ax.set_title("Histograma Talento Tech")
     ax.set_xlabel("Valores")
     ax.set_ylabel("Frecuencia")
 
-    img = io.BytesIO()            # Crea un flujo de datos en memoria
-    fig.savefig(img, format='png')  # Guarda la figura en ese flujo en formato PNG
-    img.seek(0)                   # Lleva el puntero al inicio del flujo
-    plt.close(fig)               # Cierra la figura para liberar memoria
+    img = io.BytesIO()
+    fig.savefig(img, format='png')
+    img.seek(0)
+    plt.close(fig)
 
-    # Devuelve la imagen como respuesta HTTP, indicando que es un PNG
     return Response(img.getvalue(), mimetype='image/png')
 
-# 🥧 Ruta 2: Genera un gráfico circular (pie chart)
+
+# 🥧 Ruta 2: Gráfico de pastel (pie chart)
 @app.route('/grafico-pie')
 def grafico_pie():
-    # Datos para el gráfico de pastel
-    participante = [25, 15, 30, 20, 10]  # Porcentaje de participación de cada empresa
+    participante = [25, 15, 30, 20, 10]
     etiquetas = ['Empresa A', 'Empresa B', 'Empresa C', 'Empresa D', 'Empresa E']
-    colores = ['blue', 'green', 'red', 'orange', 'purple']  # Colores asignados a cada empresa
-    sobresale = [0, 0, 0.2, 0.1, 0]  # "Explosión" para destacar ciertas porciones
+    colores = ['blue', 'green', 'red', 'orange', 'purple']
+    sobresale = [0, 0, 0.2, 0.1, 0]
 
-    fig, ax = plt.subplots()  # Crea la figura y eje
-    ax.pie(participante, labels=etiquetas, colors=colores,  # Dibuja el gráfico de pastel
-           autopct='%.1f%%', startangle=90, explode=sobresale)  # autopct muestra el porcentaje
+    fig, ax = plt.subplots()
+    ax.pie(participante, labels=etiquetas, colors=colores,
+           autopct='%.1f%%', startangle=90, explode=sobresale)
+    ax.set_title('Distribución de mercado', fontsize=16, fontweight='bold')
 
-    ax.set_title('Distribución de mercado', fontsize=16, fontweight='bold')  # Título del gráfico
+    img = io.BytesIO()
+    fig.savefig(img, format='png')
+    img.seek(0)
+    plt.close(fig)
 
-    img = io.BytesIO()                # Crea flujo de datos
-    fig.savefig(img, format='png')    # Guarda la imagen en ese flujo
-    img.seek(0)                       # Vuelve al inicio del flujo
-    plt.close(fig)                    # Cierra la figura
+    return Response(img.getvalue(), mimetype='image/png')
 
-    return Response(img.getvalue(), mimetype='image/png')  # Devuelve la imagen como respuesta HTTP
 
-# ----------------------------
-# Configuración final para producción (por ejemplo, en Render.com)
-# ----------------------------
+# 📈 Ruta 3: Gráfico de línea (original del panel)
+@app.route('/grafico')
+def grafico():
+    x = np.linspace(0, 10, 100)
+    y = np.sin(x)
+    fig, ax = plt.subplots()
+    ax.plot(x, y, color='green')
+    ax.set_title("Consumo energético ficticio")
+    ax.set_xlabel("Tiempo")
+    ax.set_ylabel("Consumo")
 
-# Esta sección solo se ejecuta si se lanza el archivo directamente (no en modo importado)
+    img = io.BytesIO()
+    fig.savefig(img, format='png')
+    img.seek(0)
+    plt.close(fig)
+
+    return Response(img.getvalue(), mimetype='image/png')
+
+# ------------------------------------------
+# Configuración para ejecución (local o producción)
+# ------------------------------------------
+
 if __name__ == '__main__':
-    # Obtiene el puerto desde una variable de entorno o usa el 5000 por defecto
-    port = int(os.environ.get('PORT', 5000))
-    # Ejecuta la aplicación en modo accesible desde cualquier IP (necesario en producción)
-    app.run(host='0.0.0.0', port=port)
-
+    port = int(os.environ.get('PORT', 5000))  # Usa puerto 5000 o el definido en el entorno
+    app.run(host='0.0.0.0', port=port)        # Ejecuta la app accesible desde cualquier IP
