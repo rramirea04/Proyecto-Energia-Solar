@@ -1,3 +1,7 @@
 {
+    // Configuración personalizada para la extensión Live Server en VS Code
+    // Esta opción define en qué puerto se ejecutará el servidor local
+    // El valor por defecto suele ser 5500, pero aquí lo cambiamos a 5502
+    // Esto es útil si el puerto 5500 ya está en uso o si se necesita trabajar con múltiples proyectos simultáneamente
     "liveServer.settings.port": 5502
-}
+  }

@@ -1,17 +1,24 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+<html lang="es"> <!-- Lenguaje principal del documento: Español -->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inicio - Energías Renovables</title>
+  <meta charset="UTF-8" /> <!-- Codificación de caracteres: UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Diseño responsive para dispositivos móviles -->
+  <title>Inicio - Energías Renovables</title> <!-- Título de la pestaña del navegador -->
+
+  <!-- Enlace a hoja de estilos CSS usando Jinja2 (Flask) -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+  <!-- Fuente Orbitron desde Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
+  <!-- Encabezado principal del sitio -->
   <header class="header" role="banner">
     <h1>Energías Sostenibles y Renovables</h1>
   </header>
 
+  <!-- Menú de navegación principal -->
   <nav class="navbar" role="navigation" aria-label="Menú principal">
     <ul>
       <li><a href="/">Inicio</a></li>
@@ -22,43 +29,55 @@
     </ul>
   </nav>
 
+  <!-- Contenedor principal en grid -->
   <div class="layout-grid">
+
+    <!-- Contenido principal de bienvenida -->
     <main class="main-content" role="main">
+
+      <!-- Sección de introducción -->
       <section class="card fade-in-up" aria-labelledby="bienvenido-title">
         <h2 id="bienvenido-title">Bienvenido</h2>
         <p>
           Explora el fascinante mundo de las energías sostenibles, descubre los diferentes tipos que existen,
-          conoce sus beneficios para el medio ambiente y la sociedad, y aprende cómo puedes incorporarlas en tu vida diaria para contribuir a un futuro más limpio y saludable.</p>
-<img 
-    src="https://megustavolar.iberia.com/wp-content/uploads/2021/06/istock-881736772.jpg" 
-    alt="Representación gráfica de energías renovables" 
-    style="width:100%; height:auto;" />
-
+          conoce sus beneficios para el medio ambiente y la sociedad, y aprende cómo puedes incorporarlas en tu vida diaria para contribuir a un futuro más limpio y saludable.
+        </p>
+        <!-- Imagen representativa -->
+        <img 
+          src="https://megustavolar.iberia.com/wp-content/uploads/2021/06/istock-881736772.jpg" 
+          alt="Representación gráfica de energías renovables" 
+          style="width:100%; height:auto;" />
       </section>
-<section class="card fade-in-up" id="video" aria-labelledby="video-title">
-  <h2 id="video-title">¿Qué son las energías?</h2>
-    <p>
-    Las energías renovables son aquellas fuentes de energía que se obtienen de recursos naturales que se regeneran de forma constante y no se agotan con su uso. Entre las principales energías renovables están la solar, eólica, hidráulica, biomasa y geotérmica. Estas energías contribuyen a reducir la contaminación y el impacto ambiental, promoviendo un desarrollo sostenible y cuidando el planeta.
-  </p>
-  <!-- Imagen educativa en lugar del video -->
-  <img 
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSds7RxOSTBrO__KUGvK9iWGkL5foua2WhmAA&s" 
-    alt="Representación gráfica de energías renovables" 
-    style="width:100%; height:auto;" />
-</section>
 
+      <!-- Sección educativa sobre las energías -->
+      <section class="card fade-in-up" id="video" aria-labelledby="video-title">
+        <h2 id="video-title">¿Qué son las energías?</h2>
+        <p>
+          Las energías renovables son aquellas fuentes de energía que se obtienen de recursos naturales que se regeneran de forma constante y no se agotan con su uso. Entre las principales energías renovables están la solar, eólica, hidráulica, biomasa y geotérmica. Estas energías contribuyen a reducir la contaminación y el impacto ambiental, promoviendo un desarrollo sostenible y cuidando el planeta.
+        </p>
+        <!-- Imagen educativa (en lugar de video) -->
+        <img 
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSds7RxOSTBrO__KUGvK9iWGkL5foua2WhmAA&s" 
+          alt="Representación gráfica de energías renovables" 
+          style="width:100%; height:auto;" />
+      </section>
+
+      <!-- Sección con contenido adicional e invitación a explorar -->
       <section class="card fade-in-up extra" aria-labelledby="explora-mas-title">
         <h2 id="explora-mas-title">Explora más</h2>
-        <p>Explora más contenidos y mantente al día con las últimas noticias,
-        avances y novedades sobre energía sostenible. Descubre cómo estas innovaciones están transformando nuestro mundo y cómo tú puedes ser parte del cambio.</p>
- <img 
-    src="https://content.presspage.com/uploads/685/c1920_santamarta31.jpg?64848" 
-    alt="Representación gráfica de energías renovables" 
-    style="width:100%; height:auto;" />
-</p>
+        <p>
+          Explora más contenidos y mantente al día con las últimas noticias,
+          avances y novedades sobre energía sostenible. Descubre cómo estas innovaciones están transformando nuestro mundo y cómo tú puedes ser parte del cambio.
+        </p>
+        <!-- Imagen decorativa e informativa -->
+        <img 
+          src="https://content.presspage.com/uploads/685/c1920_santamarta31.jpg?64848" 
+          alt="Representación gráfica de energías renovables" 
+          style="width:100%; height:auto;" />
       </section>
     </main>
 
+    <!-- Sección lateral para contacto -->
     <aside class="card fade-in-up contacto" role="complementary" aria-labelledby="contacto-title">
       <h2 id="contacto-title">Contáctanos</h2>
       <p>
@@ -68,32 +87,38 @@
     </aside>
   </div>
 
-  <!-- Botón flotante del chatbot -->
+  <!-- Botón flotante que activa el chatbot -->
   <button id="chatbot-button" aria-label="Abrir chatbot" onclick="toggleChatbot()">💬</button>
 
-  <!-- Contenedor flotante del chatbot -->
+  <!-- Contenedor del chatbot (emergente y oculto por defecto) -->
   <div id="chatbot-box" role="dialog" aria-modal="true" aria-labelledby="chatbot-title" hidden>
+    
+    <!-- Encabezado del chatbot con botón de cierre -->
     <div class="chatbot-header">
       <span id="chatbot-title">Chatbot Energía</span>
       <button class="close-chatbot" aria-label="Cerrar chatbot" onclick="toggleChatbot()">&times;</button>
     </div>
 
+    <!-- Cuerpo del chatbot con entrada de usuario -->
     <div class="chatbot-body">
       <p><strong>Chatbot:</strong> ¡Hola! ¿En qué puedo ayudarte?</p>
 
-      <label for="userInput"></label>
+      <label for="userInput"></label> <!-- Etiqueta oculta (mejora de accesibilidad) -->
       <input type="text" id="userInput" placeholder="Escribe tu pregunta" aria-describedby="respuestaBot" />
 
       <button class="chatbot-send" onclick="responder()">Enviar</button>
 
+      <!-- Zona de respuesta dinámica del bot -->
       <div id="respuestaBot" aria-live="polite"></div>
     </div>
   </div>
 
+  <!-- Pie de página del sitio -->
   <footer class="footer" role="contentinfo">
     <p>&copy; 2025 Energías Renovables. Proyecto educativo colaborativo.</p>
   </footer>
 
+  <!-- Script principal con lógica JS (calculadora, chatbot, etc.) -->
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

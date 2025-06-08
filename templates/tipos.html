@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"> <!-- Codificación de caracteres -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño adaptable a móviles -->
-  <title>Tipos de Energía</title> <!-- Título que aparece en la pestaña del navegador -->
+  <!-- Codificación de caracteres y diseño responsive -->
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tipos de Energía</title> <!-- Título de la pestaña del navegador -->
 
-  <!-- Vincula una hoja de estilos CSS local -->
+  <!-- Hoja de estilos CSS local (usando Flask con url_for) -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
   <!-- Fuente personalizada desde Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <!-- Encabezado principal del sitio -->
   <header class="header">
     <h1>Tipos de Energía Renovable</h1>
   </header>
 
-  <!-- Menú de navegación principal del sitio -->
+  <!-- Menú de navegación principal -->
   <nav class="navbar">
     <ul>
+      <!-- Enlaces con url_for para rutas de Flask -->
       <li><a href="{{ url_for('index') }}">Inicio</a></li>
       <li><a href="{{ url_for('tipos') }}">Tipos de Energía</a></li>
       <li><a href="{{ url_for('calculadora') }}">Calculadora Energética</a></li>
@@ -31,37 +34,40 @@
   <!-- Contenedor principal con diseño tipo grid -->
   <div class="layout-grid">
     <main class="main-content">
-      <!-- Cada sección representa un tipo de energía con imagen, título y descripción -->
 
-      <!-- Sección Solar -->
+      <!-- Cada sección representa un tipo de energía -->
+      <!-- Tarjetas interactivas: abren un modal al hacer clic -->
+
+      <!-- Solar -->
       <section class="card" onclick="openModal('modal-solar')">
         <h2>Solar</h2>
         <img src="{{ url_for('static', filename='img/solar_urbano1.png') }}" alt="Energía Solar">
         <p>La energía solar aprovecha la radiación del sol para generar electricidad o calor.</p>
       </section>
 
-      <!-- Sección Eólica -->
+      <!-- Eólica -->
       <section class="card" onclick="openModal('modal-eolica')">
         <h2>Eólica</h2>
         <img src="{{ url_for('static', filename='img/parque_eolico.png') }}" alt="Energía Eólica">
         <p>La energía eólica utiliza la fuerza del viento para producir electricidad mediante aerogeneradores.</p>
       </section>
 
-      <!-- Sección Hidráulica -->
+      <!-- Hidráulica -->
       <section class="card" onclick="openModal('modal-hidraulica')">
         <h2>Hidráulica</h2>
         <img src="{{ url_for('static', filename='img/solar_urbano2.png') }}" alt="Energía Hidráulica">
         <p>Se genera a partir del movimiento del agua, como ríos o presas, para accionar turbinas eléctricas.</p>
       </section>
 
-      <!-- Sección Biomasa -->
+      <!-- Biomasa -->
       <section class="card" onclick="openModal('modal-biomasa')">
         <h2>Biomasa</h2>
+        <!-- ⚠️ Imagen repetida: podrías usar otra más representativa -->
         <img src="{{ url_for('static', filename='img/solar_urbano1.png') }}" alt="Energía de Biomasa">
         <p>Proviene de materia orgánica como madera, residuos agrícolas o desechos animales.</p>
       </section>
 
-      <!-- Sección Geotérmica -->
+      <!-- Geotérmica -->
       <section class="card" onclick="openModal('modal-geotermica')">
         <h2>Geotérmica</h2>
         <img src="{{ url_for('static', filename='img/geotermia.png') }}" alt="Energía Geotérmica">
@@ -70,7 +76,10 @@
     </main>
   </div>
 
-  <!-- Modales -->
+  <!-- Modales informativos para cada tipo de energía -->
+  <!-- Se muestran al hacer clic en las tarjetas -->
+
+  <!-- Modal Solar -->
   <div id="modal-solar" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal-solar')">&times;</span>
@@ -79,6 +88,7 @@
     </div>
   </div>
 
+  <!-- Modal Eólica -->
   <div id="modal-eolica" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal-eolica')">&times;</span>
@@ -87,6 +97,7 @@
     </div>
   </div>
 
+  <!-- Modal Hidráulica -->
   <div id="modal-hidraulica" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal-hidraulica')">&times;</span>
@@ -95,6 +106,7 @@
     </div>
   </div>
 
+  <!-- Modal Biomasa -->
   <div id="modal-biomasa" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal-biomasa')">&times;</span>
@@ -103,6 +115,7 @@
     </div>
   </div>
 
+  <!-- Modal Geotérmica -->
   <div id="modal-geotermica" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal-geotermica')">&times;</span>
@@ -111,19 +124,29 @@
     </div>
   </div>
 
-  <!-- Pie de página -->
+  <!-- Pie de página del sitio -->
   <footer class="footer">
     <p>Creado En: Bootcamp | Proyecto Educativo - 2025</p>
   </footer>
 
-  <!-- Script para mostrar y ocultar los modales -->
+  <!-- Script JavaScript para controlar apertura/cierre de modales -->
   <script>
+    // Muestra el modal
     function openModal(modalId) {
       document.getElementById(modalId).style.display = 'flex';
     }
+
+    // Cierra el modal
     function closeModal(modalId) {
       document.getElementById(modalId).style.display = 'none';
     }
+
+    // Mejora: permitir cerrar con tecla Escape (opcional)
+    // document.addEventListener('keydown', function(event) {
+    //   if (event.key === "Escape") {
+    //     document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
+    //   }
+    // });
   </script>
 </body>
 </html>

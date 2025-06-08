@@ -1,118 +1,130 @@
 /* =======================================
    ESTILOS GENERALES DEL DOCUMENTO
    ======================================= */
+
+/* Estilos generales para todo el cuerpo del documento */
 body {
-  font-family: 'Open-Sans', sans-serif;
-  font-size: 16px;
-  background-color: #f1f1f1;
-  color: #0f1117;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  font-family: 'Open-Sans', sans-serif; /* Fuente general del sitio */
+  font-size: 16px; /* Tamaño base del texto */
+  background-color: #f1f1f1; /* Color de fondo claro */
+  color: #0f1117; /* Color de texto general */
+  margin: 0; /* Elimina márgenes por defecto */
+  padding: 0; /* Elimina relleno por defecto */
+  line-height: 1.2; /* Altura de línea */
+  display: flex; /* Diseño flexible para estructura vertical */
+  flex-direction: column; /* Dirección de los elementos hijos en columna */
+  min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura visible */
 }
 
+/* Reseteo de márgenes para títulos y párrafos */
 h1, h2, p {
   margin: 0;
 }
 
+/* Estilo para los encabezados h2 */
 h2 {
-  color: #22577A;
+  color: #22577A; /* Azul oscuro */
 }
 
 /* =======================================
    CABECERA (HEADER)
    ======================================= */
+
+/* Estilo de la cabecera principal */
 .header {
-  background: #22577A;
-  color: #C7F9CC;
-  text-align: center;
-  padding: 1rem;
+  background: #22577A; /* Fondo azul */
+  color: #C7F9CC; /* Texto en verde menta claro */
+  text-align: center; /* Texto centrado */
+  padding: 1rem; /* Espaciado interno */
 }
 
 /* =======================================
    BARRA DE NAVEGACIÓN (NAVBAR)
    ======================================= */
+
 .navbar {
-  background-color: #C7F9CC;
-  padding: 0.5rem 8rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  background-color: #C7F9CC; /* Color de fondo verde claro */
+  padding: 0.5rem 8rem; /* Espaciado interno: arriba/abajo y lados */
+  position: sticky; /* Posición fija mientras se hace scroll */
+  top: 0; /* Fijado en la parte superior */
+  z-index: 1000; /* Asegura que se mantenga encima de otros elementos */
 }
 
 .navbar ul {
-  display: flex;
-  list-style-type: none;
-  padding-left: 0;
+  display: flex; /* Flexbox para lista horizontal */
+  list-style-type: none; /* Elimina viñetas */
+  padding-left: 0; /* Elimina padding izquierdo */
   margin: 0;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  justify-content: center; /* Centra los elementos */
+  gap: 2rem; /* Espacio entre elementos */
+  flex-wrap: wrap; /* Permite que se envuelvan en pantallas pequeñas */
 }
 
 .navbar ul li a {
-  text-decoration: none;
-  color: #22577A;
-  font-weight: bold;
-  transition: color 0.3s;
+  text-decoration: none; /* Quita subrayado */
+  color: #22577A; /* Azul oscuro */
+  font-weight: bold; /* Texto en negrita */
+  transition: color 0.3s; /* Suaviza el cambio de color al hacer hover */
 }
 
 .navbar ul li a:hover {
-  color: #38A3A5;
+  color: #38A3A5; /* Color azul verdoso al pasar el cursor */
 }
 
 /* =======================================
    CONTENEDOR PRINCIPAL EN GRID
    ======================================= */
+
 .layout-grid {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem 8rem;
-  height: fit-content;
+  gap: 1.5rem; /* Espacio entre elementos */
+  padding: 2rem 8rem; /* Espaciado interno */
+  height: fit-content; /* Altura ajustada al contenido */
 }
 
 /* =======================================
    GRID DE CONTENIDO PRINCIPAL
    ======================================= */
+
 .main-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+  gap: 1.5rem; /* Espacio entre columnas */
 }
 
 /* =======================================
    TARJETAS DE ENERGÍA
    ======================================= */
+
 .card {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   text-align: justify;
   align-items: center;
-  background-color: #e9ecef;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  transition: .2s;
+  background-color: #e9ecef; /* Fondo claro grisáceo */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  padding: 1rem; /* Espaciado interno */
+  transition: .2s; /* Suaviza transformaciones */
 }
 
 .card img {
-  width: 100%;
+  width: 100%; /* Imagen ocupa todo el ancho del contenedor */
 }
 
 .card:hover {
-  transform: scale(1.02);
+  transform: scale(1.02); /* Agranda ligeramente al hacer hover */
 }
+
 /* =======================================
    SECCIÓN DE ENERGÍA
    ======================================= */
+
 .energia {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: space-around;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+  justify-content: space-around; /* Distribución horizontal */
 }
 
 .energia img {
@@ -125,46 +137,47 @@ h2 {
 }
 
 .energia h2, .energia p {
-  text-align: center;
+  text-align: center; /* Centrado de texto */
 }
 
 .energia:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 30px rgba(0, 255, 231, 0.2);
+  transform: scale(1.02); /* Zoom al hacer hover */
+  box-shadow: 0 0 30px rgba(0, 255, 231, 0.2); /* Sombra suave */
 }
-
 
 /* =======================================
    MODAL (VENTANA EMERGENTE)
    ======================================= */
+
 .modal {
-  display: none;
+  display: none; /* Oculto por defecto */
   position: fixed;
   z-index: 2;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(15, 17, 23, 0.9);
+  background-color: rgba(15, 17, 23, 0.9); /* Fondo oscuro semiopaco */
   align-items: center;
   justify-content: center;
 }
 
 .modal-content {
-  background-color: #121826;
+  background-color: #121826; /* Fondo de la caja del modal */
   margin: auto;
   padding: 20px;
   border-radius: 10px;
   width: 80%;
   max-width: 600px;
-  color: #00ffe7;
+  color: #00ffe7; /* Texto turquesa */
 }
 
 /* =======================================
    BOTÓN PARA CERRAR EL MODAL
    ======================================= */
+
 .close {
-  color: #888;
+  color: #888; /* Gris claro */
   position: absolute;
   top: 10px;
   right: 20px;
@@ -180,8 +193,9 @@ h2 {
 /* =======================================
    PIE DE PÁGINA
    ======================================= */
+
 .footer {
-  background-color: #dbe0e4;
+  background-color: #dbe0e4; /* Fondo gris claro */
   color: white;
   text-align: center;
   padding: 1rem 0;
@@ -191,12 +205,13 @@ h2 {
 /* =======================================
    BOTÓN FLOTANTE DEL CHATBOT
    ======================================= */
+
 #chatbot-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #00ffe7;
-  color: #121826;
+  background-color: #00ffe7; /* Turquesa */
+  color: #121826; /* Azul oscuro */
   border-radius: 50%;
   padding: 15px;
   font-size: 24px;
@@ -208,12 +223,13 @@ h2 {
 /* =======================================
    CAJA DEL CHATBOT EMERGENTE
    ======================================= */
+
 #chatbot-box {
   position: fixed;
   bottom: 80px;
   right: 20px;
   width: 300px;
-  background-color: #1a1f2e;
+  background-color: #1a1f2e; /* Azul muy oscuro */
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 255, 231, 0.2);
   display: none;
@@ -238,6 +254,7 @@ h2 {
   color: #00ffe7;
 }
 
+/* Campo de entrada de texto para el chatbot */
 #chatbot-box input[type="text"] {
   width: 93%;
   padding: 8px;
@@ -246,11 +263,10 @@ h2 {
   border-radius: 6px;
   border: 1px solid #00ffe7;
   background-color:#0f1117;
-  color: #00ffe7
-  
+  color: #00ffe7;
 }
 
-/* #chatbot-box button { */
+/* Botón para cerrar el chatbot */
 .close-chatbot{
   width: 10%;
   padding: 8px;
@@ -263,6 +279,7 @@ h2 {
   margin-top: 5px;
 }
 
+/* Mensaje de respuesta del bot */
 #respuestaBot {
   margin-top: 10px;
   color: #00ffe7;
@@ -273,6 +290,7 @@ h2 {
   font-size: 20px;
 }
 
+/* Botón para enviar mensaje */
 .chatbot-send{
   width: 80%;
   padding: 8px;
@@ -288,17 +306,18 @@ h2 {
 }
 
 /* =======================================
-   MEDIA QUERIES
+   MEDIA QUERIES (RESPONSIVE DESIGN)
    ======================================= */
+
 @media(max-width: 768px) {
   .navbar ul {
-    flex-direction: column;
+    flex-direction: column; /* Apila elementos verticalmente */
     gap: 10px;
   }
 
   .layout-grid,
   .main-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Una sola columna */
   }
 }
 
@@ -312,22 +331,23 @@ h2 {
 /* =======================================
    TARJETAS DE NOTICIAS
    ======================================= */
+
 .noticias-card {
-  background-color:  #d4f4dd; /* verde muy claro, fondo suave */
-  border: 1px solid #a3d9a5; /* verde medio para el borde */
+  background-color:  #d4f4dd; /* Fondo verde claro */
+  border: 1px solid #a3d9a5;
   border-radius: 8px;
   padding: 15px;
-  box-shadow: 0 4px 8px rgba(27, 94, 32, 0.15); /* sombra verde suave */
+  box-shadow: 0 4px 8px rgba(27, 94, 32, 0.15); /* Sombra verde */
   margin: 10px;
   text-align: center;
-  color: #2b4d27; /* verde oscuro para texto */
+  color: #2b4d27;
   transition: 0.3s;
 }
 
 .noticias-card h3 {
   min-height: 60px;
   font-size: 18px;
-  color: #1a4421; /* verde más oscuro para el título */
+  color: #1a4421;
   margin-bottom: 10px;
 }
 
@@ -339,7 +359,7 @@ h2 {
 }
 
 .noticias-card p {
-  color: #3a6b35; /* verde medio para el texto del párrafo */
+  color: #3a6b35;
   font-size: 15px;
   text-align: justify;
   margin-top: 10px;
@@ -347,13 +367,14 @@ h2 {
 
 .noticias-card:hover {
   transform: scale(1.02);
-  background-color: #a3d9a5; /* verde claro más intenso en hover */
-  box-shadow: 0 0 15px rgba(83, 157, 70, 0.4); /* sombra verde más visible */
+  background-color: #a3d9a5;
+  box-shadow: 0 0 15px rgba(83, 157, 70, 0.4);
 }
 
 /* =======================================
    ESTILO PERSONALIZADO DE LA CALCULADORA
    ======================================= */
+
 .calculadora-contenedor {
   grid-column: span 3;
   display: flex;
@@ -363,7 +384,7 @@ h2 {
 }
 
 .calculadora {
-  background-color: #e9ecef; /* Fondo claro como las cards */
+  background-color: #e9ecef;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(34, 87, 122, 0.2);
@@ -454,11 +475,12 @@ button#calcular-btn:hover {
   color: #22577A;
 }
 
-
+/* Clase para ocultar elementos */
 .hidden {
   display: none;
 }
-/* Estilo general */
+
+/* Redefinición general del body con diferentes estilos */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -466,7 +488,7 @@ body {
   color: #00334e;
 }
 
-/* Encabezado */
+/* Encabezado alternativo */
 .header {
   background-color: #0d4a6b;
   color: #ccffd5;
@@ -506,10 +528,11 @@ body {
   padding-left: 20px;
 }
 
-/* Footer */
+/* Pie de página alternativo */
 .footer {
   width: 100%;
   background-color: #0d4a6b;
   color: #ccffd5;
   text-align: center;
 }
+

@@ -28,8 +28,13 @@
       <section class="card">
         <h2>Tu espacio personalizado</h2>
         <p>Aquí podrás guardar tus resultados, preferencias y recursos educativos sobre energías renovables.</p>
-        <h2>Gráfica generada dinámicamente</h2>
-        <img src="{{ url_for('grafico') }}" alt="Gráfica energética" style="max-width:100%; height:auto;">
+
+        <!-- NUEVAS GRÁFICAS -->
+        <h2>Histograma de Talento Tech</h2>
+        <img src="{{ url_for('grafico_histograma') }}" alt="Histograma Talento Tech" style="max-width:100%; height:auto;">
+
+        <h2>Distribución de mercado</h2>
+        <img src="{{ url_for('grafico_pie') }}" alt="Gráfico circular mercado" style="max-width:100%; height:auto;">
       </section>
     </main>
   </div>

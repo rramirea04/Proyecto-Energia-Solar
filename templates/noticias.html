@@ -1,37 +1,47 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> <!-- Declaración del tipo de documento: HTML5 -->
+<html lang="es"> <!-- Lenguaje principal del documento: español -->
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noticias sobre Energía</title>
+  <meta charset="UTF-8"> <!-- Codificación de caracteres: UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Adaptación responsive a distintos dispositivos -->
+  <title>Noticias sobre Energía</title> <!-- Título de la pestaña del navegador -->
+
+  <!-- Enlace a la hoja de estilos personalizada (desde carpeta static con Flask/Jinja2) -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <!-- Fuente externa Orbitron desde Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <!-- Encabezado del sitio -->
   <header class="header">
     <h1>Noticias del Mundo Energético</h1>
   </header>
 
+  <!-- Barra de navegación principal -->
   <nav class="navbar">
     <ul>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/tipos">Tipos de Energía</a></li>
-      <li><a href="/calculadora">Calculadora Energética</a></li>
-      <li><a href="/noticias">Noticias</a></li>
-      <li><a href="/panel">Mi Panel</a></li>
+      <li><a href="/">Inicio</a></li> <!-- Enlace a la página principal -->
+      <li><a href="/tipos">Tipos de Energía</a></li> <!-- Enlace a sección educativa -->
+      <li><a href="/calculadora">Calculadora Energética</a></li> <!-- Enlace a herramienta -->
+      <li><a href="/noticias">Noticias</a></li> <!-- Página actual -->
+      <li><a href="/panel">Mi Panel</a></li> <!-- Enlace a panel de usuario o resultados -->
     </ul>
   </nav>
 
+  <!-- Contenedor principal con sistema de grillas -->
   <div class="layout-grid">
-    <main class="main-content">
+    <main class="main-content"> <!-- Contenido principal de la página -->
+
       <!-- Noticia 1 -->
       <section class="noticias-card">
         <h2>Colombia alcanza récord de generación solar con más de 500 MW instalados</h2>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtGhBOAQ8ahh78lz0Iei-i-02UboCYE2LXPg&s" alt="Paneles solares">
         <p class="fecha">Publicado el 30 de mayo, 2025</p>
-        <p>El Ministerio de Minas y Energía anunció que Colombia ha superado los 500 megavatios de capacidad instalada en energía solar fotovoltaica. Este avance es resultado de políticas públicas que incentivan la inversión privada y el desarrollo de proyectos en regiones como La Guajira, Cesar y Valle del Cauca. Se espera que para el 2026, el país supere los 800 MW.</p>
+        <p>
+          El Ministerio de Minas y Energía anunció que Colombia ha superado los 500 megavatios de capacidad instalada en energía solar fotovoltaica. Este avance es resultado de políticas públicas que incentivan la inversión privada y el desarrollo de proyectos en regiones como La Guajira, Cesar y Valle del Cauca. Se espera que para el 2026, el país supere los 800 MW.
+        </p>
       </section>
 
       <!-- Noticia 2 -->
@@ -39,7 +49,9 @@
         <h2>Nuevo parque eólico en La Guajira comenzará operaciones en junio</h2>
         <img src="https://imagenes.eltiempo.com/files/image_600_455/files/fp/uploads/2023/05/25/64702a3b1ecec.r_d.595-384.jpeg" alt="Parque eólico en La Guajira">
         <p class="fecha">Publicado el 29 de mayo, 2025</p>
-        <p>La empresa Vientos del Norte S.A.S. informó que su parque eólico “Guajira I”, con una capacidad de 200 megavatios, entrará en operación el próximo mes. Este proyecto abastecerá de energía a más de 150.000 hogares y es parte del plan de transición energética del gobierno nacional.</p>
+        <p>
+          La empresa Vientos del Norte S.A.S. informó que su parque eólico “Guajira I”, con una capacidad de 200 megavatios, entrará en operación el próximo mes. Este proyecto abastecerá de energía a más de 150.000 hogares y es parte del plan de transición energética del gobierno nacional.
+        </p>
       </section>
 
       <!-- Noticia 3 -->
@@ -47,13 +59,19 @@
         <h2>Crean primer sistema de baterías comunitarias solares en Antioquia</h2>
         <img src="https://imagenes.eltiempo.com/files/image_1200_600/files/fp/uploads/2024/10/14/670dafc26021c.r_d.1523-720-0.jpeg" alt="Baterías comunitarias solares en Antioquia">
         <p class="fecha">Publicado el 28 de mayo, 2025</p>
-        <p>Una comunidad rural en Santa Fe de Antioquia inauguró el primer sistema de almacenamiento de energía solar comunitario del país. El proyecto, liderado por una alianza entre la Universidad Nacional y empresas privadas, beneficiará a más de 500 personas con energía continua y sostenible.</p>
+        <p>
+          Una comunidad rural en Santa Fe de Antioquia inauguró el primer sistema de almacenamiento de energía solar comunitario del país. El proyecto, liderado por una alianza entre la Universidad Nacional y empresas privadas, beneficiará a más de 500 personas con energía continua y sostenible.
+        </p>
       </section>
+
     </main>
   </div>
+
+  <!-- Pie de página del sitio -->
   <footer class="footer">
     <p>&copy; 2025 Energías Renovables. Proyecto educativo colaborativo.</p>
   </footer>
 </body>
 
 </html>
+
