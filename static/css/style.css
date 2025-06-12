@@ -199,6 +199,10 @@ h2 {
    ======================================= */
 
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #dbe0e4; /* Fondo gris claro */
   color: white;
   text-align: center;
