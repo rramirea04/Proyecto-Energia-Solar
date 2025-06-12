@@ -94,18 +94,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const ahorroCo2Span = document.getElementById("ahorro-co2");
   const ahorroUsdSpan = document.getElementById("ahorro-usd");
 
-  // Evento cuando se hace clic en "Calcular"
+  // Al hacer clic en "Calcular", se ejecuta el cálculo
   calcularBtn.addEventListener("click", function () {
-    const consumo = parseFloat(consumoInput.value); // Convertir a número
-    const tipoEnergia = tipoEnergiaSelect.value.toLowerCase(); // Convertir a minúscula
+    const consumo = parseFloat(consumoInput.value);
+    const tipoEnergia = tipoEnergiaSelect.value.toLowerCase();
 
-    // Validación del consumo ingresado
+    // Validación del valor de entrada
     if (isNaN(consumo) || consumo <= 0) {
       alert("Por favor, ingrese un consumo válido mayor a cero");
       return;
     }
 
-    // Definir el factor de ahorro según el tipo de energía seleccionada
+    // Estimaciones de ahorro según tipo de energía
     let factorAhorro;
     switch (tipoEnergia) {
       case "solar":
@@ -127,19 +127,19 @@ document.addEventListener("DOMContentLoaded", function () {
         factorAhorro = 0.28;
         break;
       default:
-        factorAhorro = 0; // Por defecto si no hay coincidencia
+        factorAhorro = 0;
     }
 
-    // Cálculos principales
-    const ahorroEnergetico = consumo * factorAhorro;     // Ahorro en kWh
-    const reduccionCo2 = ahorroEnergetico * 0.5;         // Reducción estimada de CO2
-    const ahorroEconomico = ahorroEnergetico * 0.15;     // Ahorro económico estimado (USD)
+    // Cálculos finales
+    const ahorroEnergetico = consumo * factorAhorro;
+    const reduccionCo2 = ahorroEnergetico * 0.5;     // 0.5 kg CO2 por kWh ahorrado
+    const ahorroEconomico = ahorroEnergetico * 0.15; // USD ahorrado estimado por kWh
 
-    // Mostrar resultados en la interfaz
+    // Mostrar resultados
     ahorrokwhSpan.textContent = ahorroEnergetico.toFixed(2);
     ahorroCo2Span.textContent = reduccionCo2.toFixed(2);
     ahorroUsdSpan.textContent = ahorroEconomico.toFixed(2);
 
-    resultadosSection.classList.remove("hidden"); // Hace visible la sección de resultados
+    resultadosSection.classList.remove("hidden");
   });
 });

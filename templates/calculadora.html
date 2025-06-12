@@ -1,32 +1,25 @@
+<!-- Calculadora Energética: HTML con textos explicativos mejorados -->
 <!DOCTYPE html>
-<html lang="es"> <!-- Indica que el documento está en español -->
+<html lang="es">
 <head>
-  <meta charset="UTF-8" /> <!-- Define la codificación de caracteres como UTF-8 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace que la página sea responsive -->
-  <title>Calculadora Energética</title> <!-- Título que aparece en la pestaña del navegador -->
-
-  <!-- Carga el archivo CSS desde la carpeta estática usando Jinja2 (Flask) -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Energética</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-
-  <!-- Fuente personalizada desde Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
-    /* Clase para ocultar elementos dinámicamente con JS */
     .hidden {
       display: none;
     }
   </style>
 </head>
 
-<body class="calculadora-page"> <!-- Cuerpo principal de la página con una clase para aplicar estilos específicos -->
-  
-  <!-- Encabezado principal del sitio -->
+<body class="calculadora-page">
   <header class="header">
     <h1>Calculadora Energética</h1>
   </header>
 
-  <!-- Barra de navegación con enlaces a diferentes secciones del sitio -->
   <nav class="navbar">
     <ul>
       <li><a href="/">Inicio</a></li>
@@ -37,47 +30,36 @@
     </ul>
   </nav>
 
-  <!-- Contenedor general en grid que organiza las secciones -->
   <div class="layout-grid">
-
-    <!-- Tarjeta introductoria con explicación -->
     <section class="card">
       <h2>Simula tu consumo energético</h2>
-      <p>Esta calculadora te ayudará a estimar cuánta energía puedes ahorrar usando fuentes renovables.</p>
+      <p>
+        Usa esta herramienta para calcular cuánta energía puedes ahorrar al
+        cambiar tu consumo actual por una fuente renovable. Además, verás cuánto
+        contribuyes a reducir emisiones de CO₂ y cuánto podrías ahorrar en costos energéticos.
+      </p>
     </section>
 
-    <!-- Contenido principal de la calculadora -->
     <main class="main-content">
-
-      <!-- ⬇️ Contenedor visual adicional para agrupar calculadora y resultados -->
       <div class="calculadora-contenedor">
-
-        <!-- Sección con el formulario de cálculo -->
         <section class="calculadora">
           <h2>Calcula tu Ahorro de Energía</h2>
-          
-          <!-- Formulario con campos de entrada de datos -->
           <form id="form_ahorro">
-
-            <!-- Campo para ingresar nombre del usuario -->
             <div class="form-group">
               <label for="nombre">Nombre:</label>
               <input type="text" id="nombre" name="nombre" required />
             </div>
 
-            <!-- Campo para ingresar el correo electrónico -->
             <div class="form-group">
               <label for="correo">Correo Electrónico:</label>
               <input type="email" id="correo" name="correo" required />
             </div>
 
-            <!-- Campo numérico para el consumo energético actual -->
             <div class="form-group">
               <label for="consumo">Consumo Energético Actual (kWh):</label>
               <input type="number" id="consumo" name="consumo" min="0" required />
             </div>
 
-            <!-- Menú desplegable para elegir el tipo de energía renovable -->
             <select name="tipo-energia" id="tipo-energia" required>
               <option value="" disabled selected>Seleccione una opción</option>
               <option value="solar">Solar</option>
@@ -88,36 +70,26 @@
               <option value="geotermica">Geotérmica</option>
             </select>
 
-            <!-- Botón que dispara el cálculo sin enviar el formulario -->
             <button type="button" id="calcular-btn">Calcular Ahorro</button>
           </form>
         </section>
 
-        <!-- Sección oculta inicialmente que muestra los resultados -->
         <section id="resultados" class="resultados hidden">
           <h2>Resultado del Ahorro Energético</h2>
           <div class="result-card">
-            <!-- Resultados dinámicos con <span> que se actualizan desde JS -->
             <p><strong>Ahorro Energético Estimado:</strong> <span id="ahorro-kwh"></span> kWh</p>
             <p><strong>Reducción en Emisiones de CO<sub>2</sub>:</strong> <span id="ahorro-co2"></span> kg</p>
             <p><strong>Ahorro Económico Estimado:</strong> <span id="ahorro-usd"></span> USD</p>
           </div>
         </section>
-
       </div>
-      <!-- ⬆️ Fin del contenedor adicional -->
     </main>
   </div>
 
-  <!-- Pie de página con créditos -->
   <footer class="footer">
     <p>&copy; 2025 Energías Renovables. Proyecto educativo colaborativo.</p>
   </footer>
 
-  <!-- Script externo que contiene la lógica JS del chatbot y la calculadora -->
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
-
-
-
