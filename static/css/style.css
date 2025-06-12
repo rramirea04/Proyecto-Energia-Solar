@@ -400,20 +400,20 @@ h2 {
 }
 
 .calculadora-info {
-  background-color: #f5f5f5;
-  border-left: 5px solid #00592C;
+  background-color: #e9ecef;
+  border-left: 5px solid #38A3A5;
   padding: 1.5rem;
   border-radius: 10px;
-  color: #00334e;
+  color: #0f1117;
   font-size: 1rem;
   line-height: 1.6;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 12px rgba(34, 87, 122, 0.2);
   max-width: 700px;
   margin: 0 auto 2rem;
 }
 
 .calculadora-info h3 {
-  color: #00592C;
+  color: #22577A;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
