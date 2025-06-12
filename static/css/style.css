@@ -210,6 +210,10 @@ h2 {
   font-size: 0.8rem;
 }
 
+.contacto-title {
+  color: #C7F9CC !important;
+}
+
 /* =======================================
    BOTÓN FLOTANTE DEL CHATBOT
    ======================================= */
