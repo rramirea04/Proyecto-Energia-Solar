@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // =====================
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Referencias a elementos del DOM
   const calcularBtn = document.getElementById("calcular-btn");
   const consumoInput = document.getElementById("consumo");
   const tipoEnergiaSelect = document.getElementById("tipo-energia");
@@ -92,54 +91,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const ahorrokwhSpan = document.getElementById("ahorro-kwh");
   const ahorroCo2Span = document.getElementById("ahorro-co2");
-  const ahorroUsdSpan = document.getElementById("ahorro-usd");
+  const ahorroCopSpan = document.getElementById("ahorro-cop");
 
-  // Al hacer clic en "Calcular", se ejecuta el cálculo
   calcularBtn.addEventListener("click", function () {
     const consumo = parseFloat(consumoInput.value);
     const tipoEnergia = tipoEnergiaSelect.value.toLowerCase();
 
-    // Validación del valor de entrada
     if (isNaN(consumo) || consumo <= 0) {
       alert("Por favor, ingrese un consumo válido mayor a cero");
       return;
     }
 
-    // Estimaciones de ahorro según tipo de energía
     let factorAhorro;
     switch (tipoEnergia) {
-      case "solar":
-        factorAhorro = 0.2;
-        break;
-      case "eolica":
-        factorAhorro = 0.25;
-        break;
-      case "hidrogeno":
-        factorAhorro = 0.3;
-        break;
-      case "hidraulica":
-        factorAhorro = 0.22;
-        break;
-      case "biomasa":
-        factorAhorro = 0.18;
-        break;
-      case "geotermica":
-        factorAhorro = 0.28;
-        break;
-      default:
-        factorAhorro = 0;
+      case "solar": factorAhorro = 0.2; break;
+      case "eolica": factorAhorro = 0.25; break;
+      case "hidrogeno": factorAhorro = 0.3; break;
+      case "hidraulica": factorAhorro = 0.22; break;
+      case "biomasa": factorAhorro = 0.18; break;
+      case "geotermica": factorAhorro = 0.28; break;
+      default: factorAhorro = 0;
     }
 
-    // Cálculos finales
     const ahorroEnergetico = consumo * factorAhorro;
-    const reduccionCo2 = ahorroEnergetico * 0.5;     // 0.5 kg CO2 por kWh ahorrado
-    const ahorroEconomico = ahorroEnergetico * 0.15; // USD ahorrado estimado por kWh
+    const reduccionCo2 = ahorroEnergetico * 0.5;
+    const valorKwhCOP = 800; // COP por kWh
+    const ahorroCOP = ahorroEnergetico * valorKwhCOP;
 
-    // Mostrar resultados
     ahorrokwhSpan.textContent = ahorroEnergetico.toFixed(2);
     ahorroCo2Span.textContent = reduccionCo2.toFixed(2);
-    ahorroUsdSpan.textContent = ahorroEconomico.toFixed(2);
+    ahorroCopSpan.textContent = ahorroCOP.toLocaleString("es-CO") + " COP";
 
     resultadosSection.classList.remove("hidden");
   });
 });
+
