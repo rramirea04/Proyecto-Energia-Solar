@@ -24,36 +24,31 @@
   </nav>
 
   <div class="layout-grid">
+    <div class="card">
+      <h2>Tu espacio personalizado</h2>
+      <p>Aquí podrás guardar tus resultados, preferencias y recursos educativos sobre energías renovables.</p>
+    </div>
+
     <main class="main-content">
     <!-- Sección personalizada del usuario con tres gráficas alineadas -->
-<section class="card">
-  <h2>Tu espacio personalizado</h2>
-  <p>Aquí podrás guardar tus resultados, preferencias y recursos educativos sobre energías renovables.</p>
 
-  <!-- Contenedor que alinea las gráficas en fila usando Flexbox -->
-  <div class="graficas-fila">
+      <!-- Gráfica 1: Línea de consumo energético -->
+      <div class="grafica card">
+        <h3>Gráfica original</h3>
+        <img src="{{ url_for('grafico') }}" alt="Gráfica energética">
+      </div>
 
-    <!-- Gráfica 1: Línea de consumo energético -->
-    <div class="grafica">
-      <h3>Gráfica original</h3>
-      <img src="{{ url_for('grafico') }}" alt="Gráfica energética">
-    </div>
+        <!-- Gráfica 2: Histograma generado con datos aleatorios -->
+      <div class="grafica card">
+        <h3>Histograma de Talento Tech</h3>
+        <img src="{{ url_for('grafico_histograma') }}" alt="Histograma Talento Tech">
+      </div>
 
-    <!-- Gráfica 2: Histograma generado con datos aleatorios -->
-    <div class="grafica">
-      <h3>Histograma de Talento Tech</h3>
-      <img src="{{ url_for('grafico_histograma') }}" alt="Histograma Talento Tech">
-    </div>
-
-    <!-- Gráfica 3: Pie chart de participación de empresas -->
-    <div class="grafica">
-      <h3>Distribución de mercado</h3>
-      <img src="{{ url_for('grafico_pie') }}" alt="Gráfico circular mercado">
-    </div>
-
-  </div> <!-- Fin del contenedor de gráficas -->
-</section>
-
+      <!-- Gráfica 3: Pie chart de participación de empresas -->
+      <div class="grafica card">
+        <h3>Distribución de mercado</h3>
+        <img src="{{ url_for('grafico_pie') }}" alt="Gráfico circular mercado">
+      </div>
     </main>
   </div>
 
