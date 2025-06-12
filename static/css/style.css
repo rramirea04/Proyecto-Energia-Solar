@@ -35,7 +35,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   background: #22577A; /* Fondo azul */
   color: #C7F9CC; /* Texto en verde menta claro */
   text-align: center; /* Texto centrado */
