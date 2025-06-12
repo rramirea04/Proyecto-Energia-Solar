@@ -32,6 +32,10 @@ h2 {
 
 /* Estilo de la cabecera principal */
 .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
   background: #22577A; /* Fondo azul */
   color: #C7F9CC; /* Texto en verde menta claro */
   text-align: center; /* Texto centrado */
