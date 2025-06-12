@@ -399,6 +399,35 @@ h2 {
   text-align: center;
 }
 
+.calculadora-info {
+  background-color: #f5f5f5;
+  border-left: 5px solid #00592C;
+  padding: 1.5rem;
+  border-radius: 10px;
+  color: #00334e;
+  font-size: 1rem;
+  line-height: 1.6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.calculadora-info h3 {
+  color: #00592C;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.calculadora-info ul,
+.calculadora-info ol {
+  padding-left: 20px;
+  margin-top: 0.5rem;
+}
+
+.calculadora-info strong {
+  color: #22577A;
+}
+
 .form-group {
   margin-bottom: 1.5rem;
   display: flex;
