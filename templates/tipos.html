@@ -147,12 +147,12 @@
       document.getElementById(modalId).style.display = 'none';
     }
 
-    // Mejora: permitir cerrar con tecla Escape (opcional)
-    // document.addEventListener('keydown', function(event) {
-    //   if (event.key === "Escape") {
-    //     document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
-    //   }
-    // });
+    // permitir cerrar con tecla Escape.
+    document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+    document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
+    }
+    });
   </script>
 </body>
 </html>
