@@ -337,10 +337,14 @@ h2 {
   }
 }
 
-@media(max-width: 480px) {
+@media(max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
   .header,
   .footer {
-    padding: 15px;
+    padding: 1rem;
   }
 }
 
@@ -574,10 +578,13 @@ body {
 
 /* Pie de página alternativo */
 .footer {
-  width: 100%;
   background-color: #0d4a6b;
   color: #ccffd5;
   text-align: center;
+}
+
+.footer p {
+  margin-bottom: 1rem;
 }
 
 /* =======================================
