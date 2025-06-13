@@ -322,14 +322,18 @@ h2 {
    ======================================= */
 
 @media(max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
   .navbar ul {
-    flex-direction: column; /* Apila elementos verticalmente */
-    gap: 10px;
+    gap: 1rem;
   }
 
   .layout-grid,
   .main-content {
     grid-template-columns: 1fr; /* Una sola columna */
+    padding: 1rem;
   }
 }
 
@@ -555,7 +559,6 @@ body {
   background-color: #00263a;
   color: #66ffea;
   padding: 25px;
-  margin-bottom: 30px;
   border-radius: 10px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.3);
 }
